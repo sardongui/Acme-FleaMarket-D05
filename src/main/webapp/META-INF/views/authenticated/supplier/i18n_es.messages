@@ -1,0 +1,9 @@
+authenticated.supplier.form.label.companyName = Nombre de la compañía
+authenticated.supplier.form.label.homePage = Página de inicio
+authenticated.supplier.form.label.description = Descripción
+authenticated.supplier.form.label.itemCategory = Categoría del producto
+
+authenticated.supplier.form.button.create= Crear distribuidor
+authenticated.supplier.form.button.update= Actualizar distribuidor
+
+authenticated.supplier.form.button.return= Atrás 
