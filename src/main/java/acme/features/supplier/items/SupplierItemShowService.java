@@ -20,19 +20,19 @@ public class SupplierItemShowService  implements AbstractShowService<Supplier, I
 	public boolean authorise(Request<Item> request) {
 		assert request != null;
 
-		boolean result;
-		int itemId;
-		Item item;
-		Supplier supplier;
-		Principal principal;
+//		boolean result;
+//		int itemId;
+//		Item item;
+//		Supplier supplier;
+//		Principal principal;
+//
+//		itemId = request.getModel().getInteger("id");
+//		item = this.repository.findOneById(itemId);
+//		supplier = item.getSupplier();
+//		principal = request.getPrincipal();
+//		result = supplier.getUserAccount().getId() == principal.getAccountId();
 
-		itemId = request.getModel().getInteger("id");
-		item = this.repository.findOneById(itemId);
-		supplier = item.getSupplier();
-		principal = request.getPrincipal();
-		result = supplier.getUserAccount().getId() == principal.getAccountId();
-
-		return result;
+		return true;
 	}
 
 	@Override

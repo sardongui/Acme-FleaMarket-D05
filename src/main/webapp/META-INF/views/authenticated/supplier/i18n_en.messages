@@ -1,0 +1,9 @@
+authenticated.supplier.form.label.companyName = Company Name
+authenticated.supplier.form.label.homePage = Home Page
+authenticated.supplier.form.label.description = Description
+authenticated.supplier.form.label.itemCategory = Item Category
+
+authenticated.supplier.form.button.create= Create supplier
+authenticated.supplier.form.button.update= Update supplier
+
+authenticated.supplier.form.button.return= Return 
