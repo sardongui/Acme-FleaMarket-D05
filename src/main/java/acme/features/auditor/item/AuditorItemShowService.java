@@ -40,22 +40,15 @@ public class AuditorItemShowService implements AbstractShowService<Auditor, Item
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		int itemId;
 		
-//		boolean result;
-//		int itemId;
-//		Item item;
-//		Auditor auditor;
-//		Principal principal;
-//
-//		itemId = request.getModel().getInteger("id");
-//		item = this.repository.findOneById(itemId);
-//		auditor = entity.getAuditRecords().
-//		principal = request.getPrincipal();
-//		result = auditor.getUserAccount().getId() == principal.getAccountId();
-//		
-//		if(model.getAttribute("myAuditRecord").equals(true)) {
-//			model.setAttribute("myAuditRecord", true);
-//		}
+		itemId = request.getModel().getInteger("id");
+		String uri = request.getServletRequest().getHeader("Referer");
+		if(uri.contains("list-mine")) {
+			model.setAttribute("myAuditRecord", true);
+		}
+		model.setAttribute("item", itemId);
 		
 		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
 		

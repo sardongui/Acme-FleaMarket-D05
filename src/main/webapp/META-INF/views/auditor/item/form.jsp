@@ -13,15 +13,17 @@
 	<acme:form-money code="auditor.item.form.label.price" path="price"/>
 	<acme:form-url code="auditor.item.form.label.link" path="link"/>
 	
-	<jstl:if test="${command == 'show'}">
+	<jstl:if test="${command == 'show'  and myAuditRecord}">
 		<acme:form-submit method="get" code="auditor.audit-record.form.button.list"
-	 	action="/auditor/audit-record/list-mine"/>
+	 	action="/auditor/audit-record/list-mine?item=${item}"/>
 	</jstl:if>
-	<jstl:if test="${command == 'show'}">
+	<jstl:if test="${command == 'show' and not myAuditRecord}">
 		<acme:form-submit method="get" code="auditor.audit-record.form.button.listNotMine"
-	 		action="/auditor/audit-record/list-not-mine"/>
+	 		action="/auditor/audit-record/list-not-mine?item=${item}"/>
 	</jstl:if>
 	<acme:form-return code="auditor.item.form.button.return"/>
+	
 	<input id="audit-record" name="audit-record" value="${auditRecord}" type="hidden" />
+	<input id="item" name="item" value="${item}" type="hidden" />
     
 </acme:form>
