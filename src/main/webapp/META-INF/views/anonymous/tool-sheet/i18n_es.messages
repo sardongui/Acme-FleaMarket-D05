@@ -1,0 +1,13 @@
+
+anonymous.toolSheet.form.label.title = Título
+anonymous.toolSheet.form.label.description = Descripción
+anonymous.toolSheet.form.label.providerName = Nombre proveedor
+anonymous.toolSheet.form.label.providerHomePage = Página web proveedor
+anonymous.toolSheet.form.label.rating = Valoración
+
+anonymous.toolSheet.form.button.return = Volver
+
+anonymous.toolSheet.list.label.title = Título
+anonymous.toolSheet.list.label.description = Descripción
+anonymous.toolSheet.list.label.providerName = Nombre proveedor
+anonymous.toolSheet.list.label.rating = Valoración

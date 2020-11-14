@@ -1,0 +1,172 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+# master.banner.welcome #######################################################
+
+master.banner.background = #FFE97F 
+
+# master.welcome ##############################################################
+
+master.welcome.title = ¡Bienvenidos!
+master.welcome.text = \
+	Bienvenidos a Acme-FleaMarket!  Nunca antes ha sido tan sencillo desarrollar un \
+	proyecto y hacerlo funcionar.
+
+# master.menu #################################################################
+
+master.menu.home = Inicio
+master.menu.sign-up = Registrarse
+master.menu.sign-in = Entrar
+master.menu.sign-out = Salir
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link-donaire = Enlace favorito de Donaire
+master.menu.anonymous.favourite-link-martinez = Enlace favorito de Martinez
+
+master.menu.anonymous.list-donaire-bulletin = Boletín Donaire
+master.menu.anonymous.create-donaire-bulletin = Publicar en boletín Donaire
+master.menu.anonymous.list-martinez-bulletin = Boletín Martínez
+master.menu.anonymous.create-martinez-bulletin = Publicar en boletín Martínez
+master.menu.anonymous.list-suggestion = Lista de sugerencias
+master.menu.anonymous.list-figment = Lista de productos
+master.menu.anonymous.list-advertisement = Lista de anuncios
+master.menu.anonymous.list-new = Lista de Novedades
+master.menu.anonymous.list-material-sheet = Hojas de inventario
+master.menu.anonymous.list-tool-sheet = Hojas de herramientas
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.list-suggestion = Lista de sugerencias
+master.menu.authenticated.list-figment = Lista de productos
+master.menu.authenticated.list-advertisement = Lista de anuncios
+master.menu.authenticated.list-new = Lista de novedades
+master.menu.authenticated.list-material-sheet =Hojas de inventario
+master.menu.authenticated.list-tool-sheet = Hojas de herramientas
+master.menu.authenticated.list-items = Lista de items
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrador
+master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.customisation = Customización
+master.menu.administrator.shutdown = Parar el sistema
+
+master.menu.administrator.list-new = Novedades
+master.menu.administrator.create-new = Crear novedades
+master.menu.administrator.list-material-sheet = Hojas de inventario
+master.menu.administrator.create-material-sheet = Crear hojas de inventario
+master.menu.administrator.list-tool-sheet = Hojas de herramientas
+master.menu.administrator.create-tool-sheet = Crear hojas de herramientas
+master.menu.administrator.list-suggestion = Sugerencias
+master.menu.administrator.create-suggestion = Crear Sugerencias
+master.menu.administrator.list-figment = Productos
+master.menu.administrator.create-figment = Crear Producto
+master.menu.administrator.list-advertisement = Anuncio
+master.menu.administrator.create-advertisement = Create Anuncio
+
+master.menu.administrator.dashboard = Panel
+master.menu.administrator.chart = Gráfico
+
+# master.menu.provider ########################################################
+
+master.menu.provider = Proveedor
+master.menu.provider.favourite-link = Enlace favorito
+
+master.menu.auditor ########################################################
+master.menu.auditor =Auditor
+master.menu.auditor.list-audit-record = Lista de mis Registros de Auditoría
+master.menu.auditor.list-not-mine-audit-record = Lista de otros Registros de Auditoría
+master.menu.auditor.list-item = Lista de Productos
+
+
+master.menu.supplier ########################################################
+
+master.menu.supplier = Proveedor
+master.menu.supplier.list-item = Lista de Productos
+master.menu.supplier.list-request = List de Peticiones
+
+master.menu.buyer ########################################################
+
+master.menu.buyer = Comprador
+master.menu.buyer.list-request = Lista de peticiones
+
+master.menu.sponsor ########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.list-banner = Banners
+master.menu.sponsor.create-banner = Crear banner
+
+# master.menu.consumer ##########################################################
+
+master.menu.consumer = Consumidor
+master.menu.consumer.favourite-link = Enlace favorito
+master.menu.consumer.favourite-link-donaire = Enlace favorito de Donaire
+master.menu.consumer.favourite-link-martinez = Enlace favorito de Martinez
+
+master.menu.consumer.list-donaire-bulletin = Boletín de Donaire
+master.menu.consumer.create-donaire-bulletin = Publicar en boletín de Donaire
+master.menu.consumer.list-martinez-bulletin = Boletín de Martinez
+master.menu.consumer.create-martinez-bulletin = Publicar en boletín de Martinez
+master.menu.consumer.list-suggestion = Lista de sugerencias
+master.menu.consumer.list-figment = Lista de productos
+master.menu.consumer.list-advertisement = Lista de anuncios
+master.menu.consumer.list-new = Novedades
+master.menu.consumer.list-material-sheet = Hojas de inventario
+master.menu.consumer.list-tool-sheet = Hojas de herramientas
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Cuenta
+master.menu.user-account.general-data = Datos generales
+master.menu.user-account.provider = Datos de proveedor
+master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.consumer = Datos de consumidor
+master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.footer ###############################################################
+
+master.footer.title.about = Nosotros
+master.footer.label.company = La empresa
+master.footer.label.license = Licencia
+master.footer.title.social = Social
+master.footer.label.linked-in = Linked-In
+master.footer.label.twitter = Twitter
+master.footer.title.languages = Lenguages
+master.footer.label.english = Inglés
+master.footer.label.spanish = Español
+
+# master.company ##############################################################
+
+master.company.title = La compañía
+master.company.text = \
+	Acme-FleaMarket, Inc. es una compañía fictícia que proporciona un proyecto \
+	plantilla para los estudiantes de la asignatura Diseño y Pruebas, en el Grado \
+	en Ingeniería del Software de la Universidad de Sevilla.
+master.company.name = Acme-FleaMarket, Inc.
+master.company.address = Calle, número, Ciudad, Estado, País
+master.company.phone = +000 123 456
+master.company.email = contact@acme.com
+
+# master.license ##############################################################
+
+master.license.title = Licencia
+master.license.text = \
+	Puede usar este sistema de forma completamente gratuita respetando las leyes \
+	que sean aplicables.  No compartimos ninguna información sobre Ud. con ninguna \
+	otra empresa.  Tan sólo usamos tres cookies, a saber: "JSESSIONID" para identificar \
+	su sesión de trabajo, "remember" para mantener su información de autentificación \
+	durante un máximo de 31 días y "language" para almacenar sus preferencias de \
+	lenguage.  Además, almacenamos un ítem llamado "returnStack" en el almacenamiento \
+	local de su navegador para saber dónde tienen que ir algunos botones.
+	

@@ -1,0 +1,15 @@
+supplier.request.form.label.creationMoment = Creation moment
+supplier.request.form.label.quantity = Quantity
+supplier.request.form.label.ticker = Ticker
+supplier.request.form.label.notes = Notes
+
+supplier.request.form.label.item = Item
+supplier.request.form.label.item.title = Item's title
+supplier.request.form.label.item.ticker = Item's ticker
+supplier.request.form.label.item.itemCategory = Item's category
+supplier.request.form.label.item.description = Item's description
+supplier.request.form.label.item.price = Item's price
+
+supplier.request.list.label.creation=Creation moment
+supplier.request.list.label.ticker=Ticker
+supplier.request.form.button.return=Return 

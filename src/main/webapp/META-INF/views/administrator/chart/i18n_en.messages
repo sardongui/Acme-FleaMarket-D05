@@ -1,0 +1,6 @@
+
+administrator.chart.form.label.numberOfNewsGroupedByCategory = Number of news grouped by category
+administrator.chart.form.label.ratioOfWarningNewsVersusRestOfit = Ratio of warning news VS Rest of categories
+administrator.chart.form.label.numberOfAdvertisementsGroupedByDiscount = Number of advertisements grouped by discount
+administrator.chart.form.label.ratioOfItemsGroupedByItemCategory = Ratio of items grouped by item category
+administrator.chart.form.label.ratioOfSponsorsGroupedByCreditCard= Ratio of sponsors whose a credit card that has expired, versus sponsors whose credit card is not expired, versus sponsors that have not registered any credit cards 

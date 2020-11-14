@@ -1,0 +1,12 @@
+buyer.request.form.label.ticker = Ticker
+buyer.request.form.label.creation = Momento de creación
+buyer.request.form.label.quantity = Cantidad
+buyer.request.form.label.notes = Observaciones
+buyer.request.form.label.item.title = Producto
+
+buyer.request.list.label.creation= Momento de creación
+buyer.request.list.label.quantity = Cantidad
+
+buyer.request.form.button.return= Atrás 
+
+buyer.request.ticker.pattern= El código del pedido no es válido

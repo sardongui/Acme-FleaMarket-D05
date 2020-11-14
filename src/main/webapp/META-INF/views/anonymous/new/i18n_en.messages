@@ -1,0 +1,16 @@
+
+anonymous.new.form.label.picture = Picture
+anonymous.new.form.label.category = Category
+anonymous.new.form.label.title = Title
+anonymous.new.form.label.body = Body
+anonymous.new.form.label.moment = Creation
+anonymous.new.form.label.deadline = Deadline
+anonymous.new.form.label.relatedNews = Related
+
+anonymous.new.form.button.return = Return
+
+anonymous.new.list.label.moment = Creation
+anonymous.new.list.label.category = Category
+anonymous.new.list.label.title = Title
+anonymous.new.list.label.body = Body
+anonymous.new.list.label.relatedNews = Related

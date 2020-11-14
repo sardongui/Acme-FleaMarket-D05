@@ -1,0 +1,22 @@
+
+administrator.new.form.label.picture = Imagen
+administrator.new.form.label.category = Categoría
+administrator.new.form.label.title = Título
+administrator.new.form.label.body = Cuerpo
+administrator.new.form.label.moment = Creación
+administrator.new.form.label.deadline = Expiración
+administrator.new.form.label.relatedNews = Relacionados
+administrator.new.form.label.isConfirmed = Una vez creada una novedad, esta no se puede actualizar o borrar. Confirme que desea continuar
+
+administrator.new.form.button.create = Crear
+
+administrator.new.form.button.return = Volver
+
+administrator.new.list.label.moment = Creación
+administrator.new.list.label.category = Categoría
+administrator.new.list.label.title = Título
+administrator.new.list.label.body = Cuerpo
+administrator.new.list.label.relatedNews = Relacionados
+
+administrator.new.error.notConfirmed = Debe confirmar que leyó la advertencia para poder continuar
+administrator.new.error.deadline = La fecha de expiración no puede ser anterior a la de creación

@@ -1,0 +1,16 @@
+authenticated.item.form.label.creationMoment = Momento de creación
+authenticated.item.form.label.title = Título
+authenticated.item.form.label.photo = Fotografía
+authenticated.item.form.label.ticker = Ticket
+authenticated.item.form.label.description = Descripción
+authenticated.item.form.label.itemCategory = Categoría
+authenticated.item.form.label.price= Precio
+authenticated.item.form.label.link= Link con Información Adicional
+
+authenticated.item.list.label.creationMoment= Momento de creación
+authenticated.item.list.label.title= Título
+
+authenticated.item.form.button.return= Atrás 
+
+authenticated.item.form.button.viewMessages = Ver foro
+authenticated.item.form.button.newMessage = Nuevo mensaje de foro

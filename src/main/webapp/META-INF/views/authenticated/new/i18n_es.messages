@@ -1,0 +1,16 @@
+
+authenticated.new.form.label.picture = Imagen
+authenticated.new.form.label.category = Categoría
+authenticated.new.form.label.title = Título
+authenticated.new.form.label.body = Cuerpo
+authenticated.new.form.label.moment = Creación
+authenticated.new.form.label.deadline = Expiración
+authenticated.new.form.label.relatedNews = Relacionados
+
+authenticated.new.form.button.return = Volver
+
+authenticated.new.list.label.moment = Creación
+authenticated.new.list.label.category = Categoría
+authenticated.new.list.label.title = Título
+authenticated.new.list.label.body = Cuerpo
+authenticated.new.list.label.relatedNews = Relacionados

@@ -1,0 +1,19 @@
+administrator.figment.form.label.title = Title
+administrator.figment.form.label.creationMoment = Creation moment
+administrator.figment.form.label.description = Description
+administrator.figment.form.label.nameInventor = Name inventor
+administrator.figment.form.label.minMoney = Min money
+administrator.figment.form.label.maxMoney = Max money
+
+administrator.figment.form.button.update=Update
+administrator.figment.form.button.delete=Delete
+administrator.figment.form.button.create=Create
+
+administrator.figment.list.label.creationMoment = Creation moment
+administrator.figment.list.label.title = Title
+
+administrator.figment.form.button.return = Return
+
+administrator.figment.error.minMoney = We only accept Euros.
+administrator.figment.error.minMoneyLower.= Min money have to be lower than max money.
+administrator.figment.error.maxMoney = We only accept Euros.

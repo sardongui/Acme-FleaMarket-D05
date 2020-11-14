@@ -1,0 +1,49 @@
+# target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Population Scripts ###
+/src/main/population/create-schema.sql
+/src/main/population/drop-schema.sql
+/src/main/population/entity-map.properties
+
+./src/main/population/create-schema.sql
+./src/main/population/drop-schema.sql
+./src/main/population/entity-map.properties
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+\.mvn/wrapper/maven-wrapper\.jar
+
+\.mvn/wrapper/maven-wrapper\.properties
+
+mvnw
+
+mvnw\.cmd
+/bin/
+/target/acme-fleamarket-1.0/
+/target/classes/
+/target/generated-sources/
+/target/m2e-wtp/
+/target/maven-archiver/
+/target/maven-status/
+
+/target/

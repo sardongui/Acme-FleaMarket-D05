@@ -1,0 +1,8 @@
+
+administrator.customisation.form.label.spamwords = Spamwords
+administrator.customisation.form.label.threshold = Threshold
+administrator.customisation.form.label.newsCategories = News Categories
+administrator.customisation.form.label.itemsCategories = Items Categories
+
+administrator.customisation.form.button.update = Update
+administrator.customisation.form.button.return = Return

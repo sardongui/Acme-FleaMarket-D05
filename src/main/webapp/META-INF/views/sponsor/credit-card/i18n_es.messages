@@ -1,0 +1,22 @@
+
+sponsor.creditCard.form.label.holderName = Nombre propietario
+sponsor.creditCard.form.label.number = Número
+sponsor.creditCard.form.label.brand = Marca
+sponsor.creditCard.form.label.month = Mes expiración
+sponsor.creditCard.form.label.year = Año expiración
+sponsor.creditCard.form.label.cvv = CVV
+
+sponsor.creditCard.form.button.update = Actualizar
+sponsor.creditCard.form.button.create = Crear
+sponsor.creditCard.form.button.delete = Borrar
+
+sponsor.creditCard.form.button.return = Atrás
+
+sponsor.creditCard.list.label.holderName = Nombre propietario
+sponsor.creditCard.list.label.number = Número
+sponsor.creditCard.list.label.brand = Marca
+sponsor.creditCard.list.label.month = Mes expiración
+sponsor.creditCard.list.label.year = Año expiración
+sponsor.creditCard.list.label.cvv = CVV
+
+creditCard.error.cvv = El CVV debe tener 3 o 4 dígitos

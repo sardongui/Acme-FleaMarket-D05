@@ -1,0 +1,16 @@
+administrator.advertisement.form.label.creationMoment = Momento de creación
+administrator.advertisement.form.label.title = Título
+administrator.advertisement.form.label.picture = Imagen
+administrator.advertisement.form.label.displayPeriod = Periodo de visualización
+administrator.advertisement.form.label.text = Texto
+administrator.advertisement.form.label.discounts= Descuento
+
+administrator.advertisement.list.label.creationMoment=Momento de creación
+administrator.advertisement.list.label.title=Título
+
+administrator.advertisement.form.button.update = Editar
+administrator.advertisement.form.button.create = Crear
+administrator.advertisement.form.button.delete = Borrar
+administrator.advertisement.form.button.return=Volver 
+
+administrator.advertisement.error.displayPeriod = El período de visualización tiene que ser posterior a la fecha actual

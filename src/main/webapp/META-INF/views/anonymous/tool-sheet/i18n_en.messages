@@ -1,0 +1,13 @@
+
+anonymous.toolSheet.form.label.title = Title
+anonymous.toolSheet.form.label.description = Description
+anonymous.toolSheet.form.label.providerName = Provider name
+anonymous.toolSheet.form.label.providerHomePage = Provider home-page
+anonymous.toolSheet.form.label.rating = Rating
+
+anonymous.toolSheet.form.button.return = Return
+
+anonymous.toolSheet.list.label.title = Title
+anonymous.toolSheet.list.label.description = Description
+anonymous.toolSheet.list.label.providerName = Provider name
+anonymous.toolSheet.list.label.rating = Rating

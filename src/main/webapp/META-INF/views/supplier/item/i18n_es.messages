@@ -1,0 +1,13 @@
+supplier.item.form.label.creationMoment = Momento de creación
+supplier.item.form.label.title = Título
+supplier.item.form.label.photo = Fotrografía
+supplier.item.form.label.ticker = Ticket
+supplier.item.form.label.description = Descripción
+supplier.item.form.label.itemCategory = Categoría
+supplier.item.form.label.price= Precio
+supplier.item.form.label.link= Link con Información Adicional
+
+supplier.item.list.label.creationMoment=Momento de creación
+supplier.item.list.label.title=Título
+
+supplier.item.form.button.return=Atrás 

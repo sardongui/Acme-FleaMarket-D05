@@ -1,0 +1,10 @@
+authenticated.message.form.label.creation = Creation moment
+authenticated.message.form.label.title = Title
+authenticated.message.form.label.body = Message
+authenticated.message.form.label.tags = Tags
+
+authenticated.message.list.label.creation= Creation moment
+authenticated.message.list.label.title= Title
+
+authenticated.message.form.button.return= Return 
+authenticated.message.form.button.create= Create

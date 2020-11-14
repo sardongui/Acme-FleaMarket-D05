@@ -1,0 +1,13 @@
+
+authenticated.materialSheet.form.label.title = Title
+authenticated.materialSheet.form.label.description = Description
+authenticated.materialSheet.form.label.providerName = Provider name
+authenticated.materialSheet.form.label.providerHomePage = Provider home-page
+authenticated.materialSheet.form.label.rating = Rating
+
+authenticated.materialSheet.form.button.return = Return
+
+authenticated.materialSheet.list.label.title = Title
+authenticated.materialSheet.list.label.description = Description
+authenticated.materialSheet.list.label.providerName = Provider name
+authenticated.materialSheet.list.label.rating = Rating

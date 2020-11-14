@@ -1,0 +1,11 @@
+authenticated.advertisement.form.label.creationMoment = Momento de creación
+authenticated.advertisement.form.label.title = Título
+authenticated.advertisement.form.label.picture = Imagen
+authenticated.advertisement.form.label.displayPeriod = Periodo de visualización
+authenticated.advertisement.form.label.text = Texto
+authenticated.advertisement.form.label.discounts= Descuento
+
+authenticated.advertisement.list.label.creationMoment=Momento de creación
+authenticated.advertisement.list.label.title=Título
+
+authenticated.advertisement.form.button.return=Volver 

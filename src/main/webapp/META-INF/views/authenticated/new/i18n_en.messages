@@ -1,0 +1,16 @@
+
+authenticated.new.form.label.picture = Picture
+authenticated.new.form.label.category = Category
+authenticated.new.form.label.title = Title
+authenticated.new.form.label.body = Body
+authenticated.new.form.label.moment = Creation
+authenticated.new.form.label.deadline = Deadline
+authenticated.new.form.label.relatedNews = Related
+
+authenticated.new.form.button.return = Return
+
+authenticated.new.list.label.moment = Creation
+authenticated.new.list.label.category = Category
+authenticated.new.list.label.title = Title
+authenticated.new.list.label.body = Body
+authenticated.new.list.label.relatedNews = Related

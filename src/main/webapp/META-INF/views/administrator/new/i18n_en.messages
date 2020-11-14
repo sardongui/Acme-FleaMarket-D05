@@ -1,0 +1,22 @@
+
+administrator.new.form.label.picture = Picture
+administrator.new.form.label.category = Category
+administrator.new.form.label.title = Title
+administrator.new.form.label.body = Body
+administrator.new.form.label.moment = Creation
+administrator.new.form.label.deadline = Deadline
+administrator.new.form.label.relatedNews = Related
+administrator.new.form.label.isConfirmed = Once created, the new cannot be updated or deleted. Confirm that you want to continue
+
+administrator.new.form.button.create= Create
+
+administrator.new.form.button.return = Return
+
+administrator.new.list.label.moment = Creation
+administrator.new.list.label.category = Category
+administrator.new.list.label.title = Title
+administrator.new.list.label.body = Body
+administrator.new.list.label.relatedNews = Related
+
+administrator.new.error.notConfirmed = You must confirm that you have read the warning in order to continue
+administrator.new.error.deadline = The deadline date cannot be earlier than the creation date

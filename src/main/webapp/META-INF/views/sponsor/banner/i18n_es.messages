@@ -1,0 +1,22 @@
+sponsor.banner.form.label.picture = Imagen
+sponsor.banner.form.label.slogan = Eslogan
+sponsor.banner.form.label.target = URL
+
+sponsor.banner.creditCard.form.legend.creditCard = Tarjeta de crédito vinculada
+sponsor.banner.creditCard.form.label.holderName = Nombre del propietario
+sponsor.banner.creditCard.form.label.number = Número
+sponsor.banner.creditCard.form.label.brand = Marca
+sponsor.banner.creditCard.form.label.month = Mes expiración
+sponsor.banner.creditCard.form.label.year = Año expiración
+sponsor.banner.creditCard.form.label.cvv = CVV
+
+sponsor.banner.form.button.addCreditCard = Añadir tarjeta crédito
+sponsor.banner.form.button.showCreditCard = Mostrar tarjeta crédito
+sponsor.banner.form.button.update = Actualizar
+sponsor.banner.form.button.delete = Borrar
+sponsor.banner.form.button.create = Crear
+
+sponsor.banner.form.button.return = Volver
+
+sponsor.banner.list.label.picture = Imagen
+sponsor.banner.list.label.slogan = Eslogan

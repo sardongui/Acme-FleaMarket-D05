@@ -1,0 +1,16 @@
+authenticated.item.form.label.creationMoment = Creation moment
+authenticated.item.form.label.title = Title
+authenticated.item.form.label.photo = Photo
+authenticated.item.form.label.ticker = Ticker
+authenticated.item.form.label.description = Description
+authenticated.item.form.label.itemCategory = Item Category
+authenticated.item.form.label.price= Price
+authenticated.item.form.label.link= Link with Info Additional
+
+authenticated.item.list.label.creationMoment= Creation moment
+authenticated.item.list.label.title= Title
+
+authenticated.item.form.button.return= Return 
+
+authenticated.item.form.button.viewMessages = View forum
+authenticated.item.form.button.newMessage = New forum message

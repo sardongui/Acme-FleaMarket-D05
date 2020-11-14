@@ -1,0 +1,6 @@
+
+administrator.chart.form.label.numberOfNewsGroupedByCategory = Novedades agrupadas por categoría
+administrator.chart.form.label.ratioOfWarningNewsVersusRestOfit = Ratio de novedades con categoría 'warning' VS Resto de categorías
+administrator.chart.form.label.numberOfAdvertisementsGroupedByDiscount = Anuncios agrupados por descuento
+administrator.chart.form.label.ratioOfItemsGroupedByItemCategory = Ratio de productos agrupados por categoría del producto
+administrator.chart.form.label.ratioOfSponsorsGroupedByCreditCard = Ratio de patrocinadores agrupados por estado de la tarjeta de crédito

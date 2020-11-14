@@ -1,0 +1,13 @@
+
+authenticated.materialSheet.form.label.title = Título
+authenticated.materialSheet.form.label.description = Descripción
+authenticated.materialSheet.form.label.providerName = Nombre proveedor
+authenticated.materialSheet.form.label.providerHomePage = Página web proveedor
+authenticated.materialSheet.form.label.rating = Valoración
+
+authenticated.materialSheet.form.button.return = Volver
+
+authenticated.materialSheet.list.label.title = Título
+authenticated.materialSheet.list.label.description = Descripción
+authenticated.materialSheet.list.label.providerName = Nombre proveedor
+authenticated.materialSheet.list.label.rating = Valoración

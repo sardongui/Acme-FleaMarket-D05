@@ -1,0 +1,11 @@
+anonymous.advertisement.form.label.creationMoment = Creation moment
+anonymous.advertisement.form.label.title = Title
+anonymous.advertisement.form.label.picture = Picture
+anonymous.advertisement.form.label.displayPeriod = Display period
+anonymous.advertisement.form.label.text = Text
+anonymous.advertisement.form.label.discounts= Discount
+
+anonymous.advertisement.list.label.creationMoment=Creation moment
+anonymous.advertisement.list.label.title=Title
+
+anonymous.advertisement.form.button.return=Return 

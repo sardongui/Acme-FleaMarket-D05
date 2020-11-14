@@ -1,0 +1,15 @@
+administrator.dashboard.form.label.numberNews = Number of News
+administrator.dashboard.form.label.numberMaterialSheets = Number of Material Sheets
+administrator.dashboard.form.label.numberToolSheets = Number of Tool Sheets
+administrator.dashboard.form.label.numberSuggestions = Number of Suggestions
+administrator.dashboard.form.label.numberFigments = Number of Figments
+administrator.dashboard.form.label.minDiscountAdvertisements = Minimum Discounts Advertisements
+administrator.dashboard.form.label.maxDiscountAdvertisements = Maximum Discounts Advertisements
+administrator.dashboard.form.label.averageSmallDiscountAdvertisements = Average Small Discount Advertisements
+administrator.dashboard.form.label.averageAverageDiscountAdvertisements = Average Average Discount Advertisements
+administrator.dashboard.form.label.averageLargeDiscountAdvertisements = Average Large Discount Advertisements
+administrator.dashboard.form.label.stddevDiscountAdvertisements = Standard Desviation Discount Advertisments
+administrator.dashboard.form.label.averageItemsPerSupplier = Average Number of Items Per Supplier
+administrator.dashboard.form.label.averageRequestsPerSupplier = Average Number of Requests Per Supplier
+administrator.dashboard.form.label.averageRequestsPerBuyer = Average Number of Requests Per Buyer
+administrator.dashboard.form.button.return = Return
