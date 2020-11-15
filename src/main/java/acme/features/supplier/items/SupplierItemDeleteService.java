@@ -5,33 +5,31 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
 import acme.entities.roles.Supplier;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class SupplierItemShowService  implements AbstractShowService<Supplier, Item>{
+public class SupplierItemDeleteService implements AbstractDeleteService<Supplier, Item>{
 
 	@Autowired
-	SupplierItemRepository repository;
-
+	private SupplierItemRepository repository;
+	
 	@Override
 	public boolean authorise(Request<Item> request) {
 		assert request != null;
-
-//		boolean result;
-//		int itemId;
-//		Item item;
-//		Supplier supplier;
-//		Principal principal;
-//
-//		itemId = request.getModel().getInteger("id");
-//		item = this.repository.findOneById(itemId);
-//		supplier = item.getSupplier();
-//		principal = request.getPrincipal();
-//		result = supplier.getUserAccount().getId() == principal.getAccountId();
-
 		return true;
+	}
+
+	@Override
+	public void bind(Request<Item> request, Item entity, Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors);
+		
 	}
 
 	@Override
@@ -39,21 +37,34 @@ public class SupplierItemShowService  implements AbstractShowService<Supplier, I
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		
 		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
+		
+		
 	}
 
 	@Override
 	public Item findOne(Request<Item> request) {
 		assert request != null;
-
 		Item result;
 		int id;
-
 		id = request.getModel().getInteger("id");
-
 		result = this.repository.findOneById(id);
 		return result;
+	}
+
+	@Override
+	public void validate(Request<Item> request, Item entity, Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+	}
+
+	@Override
+	public void delete(Request<Item> request, Item entity) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

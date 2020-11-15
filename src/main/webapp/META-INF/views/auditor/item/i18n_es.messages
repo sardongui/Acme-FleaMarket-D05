@@ -14,3 +14,6 @@ auditor.item.list.label.auditor = Auditor
 auditor.audit-record.form.button.list= Lista de mis registros de auditoría
 auditor.audit-record.form.button.listNotMine = Lista de otros registros de auditoría
 auditor.item.form.button.return=Atrás 
+
+supplier.item.form.button.update = Actualizar
+supplier.item.form.button.create = Crear

@@ -63,6 +63,11 @@ public class Item extends DomainEntity {
 
 	@URL
 	private String				link;
+	
+	private boolean				finalMode;
+
+	@Pattern(regexp = "^(DRAFT|PUBLISHED)$")
+	private String				status;
 
 	// Derived attributes -----------------------------------------------------
 	
