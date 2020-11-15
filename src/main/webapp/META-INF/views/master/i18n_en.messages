@@ -134,6 +134,8 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-supplier = Become a supplier
 master.menu.user-account.supplier = Supplier data
+master.menu.user-account.become-buyer = Become a buyer
+master.menu.user-account.buyer = Buyer data
 
 # master.footer ###############################################################
 

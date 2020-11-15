@@ -36,28 +36,29 @@ public class Buyer extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long			serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
 	@Email
-	private String				email;
+	private String						email;
 
 	@NotBlank
-	@Pattern(regexp = "^\\+([1-9]|[1-9][0-9]|[1-9][0-9][0-9]) \\(([1-9]|[1-9][0-9]|[1-9][0-9][0-9])\\) ([0-9]{4,})$|^\\+([1-9]|[1-9][0-9]|[1-9][0-9][0-9]) ([0-9]{4,})$|^([0-9]{4,})$")
-	private String				phone;
+	@Pattern(regexp = "^\\+([1-9]|[1-9][0-9]|[1-9][0-9][0-9]) \\(([1-9]|[1-9][0-9]|[1-9][0-9][0-9])\\) ([0-9]{4,})$|^\\+([1-9]|[1-9][0-9]|[1-9][0-9][0-9]) ([0-9]{4,})$|^([0-9]{4,})$", message = "{buyer.error.phone}")
+	private String						phone;
 
 	@NotBlank
-	private String				deliveryAddress;
+	private String						deliveryAddress;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
 	@Valid
+	@NotNull
 	@OneToOne(optional = false)
-	private CreditCard			creditCard;
+	private CreditCard					creditCard;
 
 	@Valid
 	@NotNull
