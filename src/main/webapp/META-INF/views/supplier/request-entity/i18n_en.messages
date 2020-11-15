@@ -9,7 +9,14 @@ supplier.request.form.label.item.ticker = Item's ticker
 supplier.request.form.label.item.itemCategory = Item's category
 supplier.request.form.label.item.description = Item's description
 supplier.request.form.label.item.price = Item's price
+supplier.request.form.label.rejectionJustification = Rejection Justification
+supplier.request.form.label.status = Status
+supplier.request.form.label.status.pending = Pending
+supplier.request.form.label.status.accepted = Accepted
+supplier.request.form.label.status.rejected = Rejected
 
 supplier.request.list.label.creation=Creation moment
 supplier.request.list.label.ticker=Ticker
+supplier.request.form.button.update = Update
 supplier.request.form.button.return=Return 
+

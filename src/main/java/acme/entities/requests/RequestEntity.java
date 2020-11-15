@@ -46,8 +46,8 @@ public class RequestEntity extends DomainEntity {
 
 	// Derived attributes -----------------------------------------------------
 	
-	//@NotNull
-	//private ApplicationStatus	status;					// PENDIENTE, ACEPTADO O RECHAZADO
+	@NotNull
+	private RequestEntityStatus	status;					// PENDIENTE, ACEPTADO O RECHAZADO
 
 	private String				rejectionJustification;			// OBLIGATORIO AL RECHAZAR
 

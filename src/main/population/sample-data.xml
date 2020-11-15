@@ -607,6 +607,8 @@
 		<property name="quantity" value="2.0"/>
 		<property name="item" ref="item1" />
 		<property name="buyer" ref="buyer1Buyer" />
+		<property name="status" value="PENDING" />
+  		<property name="rejectionJustification" value="" />
 	</bean>
 	
 	<bean id="request2" class="acme.entities.requests.RequestEntity">
@@ -615,6 +617,8 @@
 		<property name="quantity" value="1.0"/>
 		<property name="item" ref="item2" />
 		<property name="buyer" ref="buyer1Buyer" />
+		<property name="status" value="REJECTED" />
+  		<property name="rejectionJustification" value="Example justification" />
 	</bean>
 	
 	<!-- Messages -->
