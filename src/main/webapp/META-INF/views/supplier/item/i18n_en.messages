@@ -10,4 +10,7 @@ supplier.item.form.label.link= Link with Info Additional
 supplier.item.list.label.creationMoment=Creation moment
 supplier.item.list.label.title=Title
 
+supplier.item.form.button.update = Update
+supplier.item.form.button.create = Create
+supplier.item.form.button.delete = Delete
 supplier.item.form.button.return=Return 

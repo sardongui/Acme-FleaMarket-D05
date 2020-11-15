@@ -90,7 +90,6 @@ public class Item extends DomainEntity {
 //	private Collection<AuditRecord>	auditRecords;
 
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "item")
 	private Collection<RequestEntity>	requests;
 

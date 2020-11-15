@@ -16,6 +16,12 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 	@Autowired
 	private SupplierItemRepository repository;
 	
+//	@Autowired
+//	private SupplierSpecificationSheetRepository specificationSheetRepository;
+//	
+//	@Autowired
+//	private SupplierSectionRepository sectionRepository;
+	
 	@Override
 	public boolean authorise(Request<Item> request) {
 		assert request != null;
@@ -28,7 +34,7 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "specificationSheet");
 		
 	}
 
@@ -59,11 +65,32 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 		assert entity != null;
 		assert errors != null;
 		
+//		Collection<RequestEntity> result;
+//		int id;
+//		id = request.getModel().getInteger("id");
+//		result = this.repository.findRequestByItemId(id);
+//		
+//		if(result.isEmpty()) {
+//			
+//		}
+		
 	}
 
 	@Override
 	public void delete(Request<Item> request, Item entity) {
-		// TODO Auto-generated method stub
+		assert request != null;
+		assert entity != null;
+		
+//		Collection<SpecificationSheet> ss = this.repository.findSpecificationSheetByItemId(entity.getId());
+//		if(!ss.isEmpty()) {
+//			for (SpecificationSheet specificationSheet : ss) {
+//				this.specificationSheetRepository.delete(specificationSheet);
+//				for(Section section: s) {
+//					this.sectionRepository.delete(section);
+//				}
+//			}
+//		}
+		this.repository.delete(entity);
 		
 	}
 
