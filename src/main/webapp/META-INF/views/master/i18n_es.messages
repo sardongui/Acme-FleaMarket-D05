@@ -58,6 +58,7 @@ master.menu.authenticated.list-items = Lista de items
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.auditor.list-requests = Solicitudes registro auditores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.customisation = Customización
 master.menu.administrator.shutdown = Parar el sistema
@@ -137,6 +138,8 @@ master.menu.user-account.become-supplier = Hazte distribuidor
 master.menu.user-account.supplier = Datos de distribuidor
 master.menu.user-account.become-buyer = Hazte comprador
 master.menu.user-account.buyer = Datos comprador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor = Datos auditor
 
 # master.footer ###############################################################
 

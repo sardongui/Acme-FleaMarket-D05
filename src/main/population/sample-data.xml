@@ -399,6 +399,7 @@
 	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
 		<property name="firm" value="Auditor firm" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement"/>
+		<property name="accepted" value="true"/>
 		<property name="userAccount" ref="auditor1UserAccount" />
 		<property name="auditRecords">
 			<list>
@@ -435,6 +436,7 @@
 	<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
 		<property name="firm" value="Auditor firm 2" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement 2"/>
+		<property name="accepted" value="true"/>
 		<property name="userAccount" ref="auditor2UserAccount" />
 		<property name="auditRecords">
 			<list>
