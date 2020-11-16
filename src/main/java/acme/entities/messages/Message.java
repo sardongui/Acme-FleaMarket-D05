@@ -37,6 +37,8 @@ public class Message extends DomainEntity {
 	@NotBlank
 	private String				body;
 
+	private boolean				confirmed;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

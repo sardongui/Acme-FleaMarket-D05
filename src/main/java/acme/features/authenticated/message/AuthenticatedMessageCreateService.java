@@ -12,14 +12,18 @@
 
 package acme.features.authenticated.message;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.customisations.Customisation;
 import acme.entities.forums.Forum;
 import acme.entities.items.Item;
 import acme.entities.messages.Message;
+import acme.features.administrator.customisation.AdministratorCustomisationRepository;
 import acme.features.authenticated.item.AuthenticatedItemRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -33,10 +37,13 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedMessageRepository	repository;
+	private AuthenticatedMessageRepository			repository;
 
 	@Autowired
-	private AuthenticatedItemRepository		itemRepository;
+	private AuthenticatedItemRepository				itemRepository;
+
+	@Autowired
+	private AdministratorCustomisationRepository	customisationRepository;
 
 
 	// AbstractCreateService<Authenticated, Message> interface ---------------
@@ -63,7 +70,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creation", "tags", "body");
+		request.unbind(entity, model, "title", "creation", "tags", "body", "confirmed");
 		Integer item = request.getModel().getInteger("item");
 		model.setAttribute("item", item);
 
@@ -95,6 +102,32 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		List<Customisation> customisations = new ArrayList<Customisation>(this.customisationRepository.findMany());
+		Customisation customisation = customisations.get(0);
+		String spam = customisation.getSpamwords();
+
+		String[] spamWords = spam.split(",");
+		String title = entity.getTitle();
+		String body = entity.getBody();
+		String tags = entity.getTags();
+
+		if (!entity.isConfirmed()) {
+			errors.state(request, false, "confirmed", "authenticated.message.error.notConfirmed");
+		}
+
+		for (String s : spamWords) {
+			if (title.contains(s)) {
+				errors.state(request, false, "title", "authenticated.message.error.spam");
+			}
+			if (body.contains(s)) {
+				errors.state(request, false, "body", "authenticated.message.error.spam");
+			}
+			if (tags.contains(s)) {
+				errors.state(request, false, "tags", "authenticated.message.error.spam");
+			}
+		}
+
 	}
 
 	@Override
