@@ -140,6 +140,8 @@ master.menu.user-account.become-buyer = Hazte comprador
 master.menu.user-account.buyer = Datos comprador
 master.menu.user-account.become-auditor = Hazte auditor
 master.menu.user-account.auditor = Datos auditor
+master.menu.user-account.become-sponsor = Hazte patrocinador
+master.menu.user-account.sponsor = Datos patrocinador
 
 # master.footer ###############################################################
 
