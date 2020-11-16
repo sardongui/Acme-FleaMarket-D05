@@ -9,7 +9,7 @@ import acme.framework.repositories.AbstractRepository;
 
 public interface SupplierRequestRepository extends AbstractRepository{
 
-	@Query("select r from RequestEntity r where r.item.supplier.id=?1")
+	@Query("select r from RequestEntity r where r.item.supplier.id=?1 group by r.ticker, r.creation")
 	Collection<RequestEntity> findManyBySupplierId(int supplierId);
 
 	@Query("select r from RequestEntity r where r.id =?1")

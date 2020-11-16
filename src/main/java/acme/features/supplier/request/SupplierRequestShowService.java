@@ -41,9 +41,13 @@ public class SupplierRequestShowService implements AbstractShowService<Supplier,
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		String referenceItem = entity.getItem().getTicker();
+		model.setAttribute("referenceItem", referenceItem);
+		String itemSupplier = entity.getItem().getSupplier().getUserAccount().getUsername();
+		model.setAttribute("itemSupplier", itemSupplier);
 
-		request.unbind(entity, model, "ticker", "creation", "quantity", "status", "notes", "item.ticker", "item.title",
-				"item.itemCategory", "item.description", "item.price", "rejectionJustification");
+		request.unbind(entity, model, "ticker", "creation", "quantity", "status", "notes", "rejectionJustification");
 	
 	}
 

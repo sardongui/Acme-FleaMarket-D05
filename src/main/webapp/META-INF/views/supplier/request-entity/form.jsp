@@ -7,18 +7,16 @@
 	<acme:form-moment code="supplier.request.form.label.creationMoment" path="creation" readonly="true"/>
 	<acme:form-textbox code="supplier.request.form.label.ticker" path="ticker" readonly="true"/>
 	<acme:form-textbox code="supplier.request.form.label.quantity" path="quantity"/>
-	<acme:form-textbox code="supplier.request.form.label.notes" path="notes"/>
-	<acme:form-textbox code="supplier.request.form.label.item.title" path="item.title" readonly="true"/>
-	<acme:form-textbox code="supplier.request.form.label.item.ticker" path="item.ticker" readonly="true"/> 
-	<acme:form-textbox code="supplier.request.form.label.item.itemCategory" path="item.itemCategory" readonly="true"/> 
-	<acme:form-textbox code="supplier.request.form.label.item.description" path="item.description" readonly="true"/> 
-	<acme:form-textbox code="supplier.request.form.label.item.price" path="item.price" readonly="true"/> 
+	<acme:form-textbox code="supplier.request.form.label.notes" path="notes"/> 
 	<acme:form-textbox code="supplier.request.form.label.status" path="status"/>
 	
-	<jstl:if test="${command == 'update' || status != 'ACCEPTED'}">
+	<jstl:if test="${command == 'update' || status != 'ACCEPTED'}">`
 		<acme:form-textarea code="supplier.request.form.label.rejectionJustification" path="rejectionJustification" />
 	</jstl:if>
-	
+	<acme:menu-separator />
+	<acme:form-textbox code="supplier.item.form.label.referenceItem" path="referenceItem" readonly="true"/>
+	<acme:form-textbox code="supplier.item.form.label.itemSupplier" path="itemSupplier" readonly="true"/>
+	<acme:menu-separator />
 	<acme:form-submit test="${(command == 'show' && status == 'PENDING') || command == 'update'}"
 		code="supplier.request.form.button.update" action="update" />
 	

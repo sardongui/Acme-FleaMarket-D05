@@ -25,14 +25,9 @@ public class SupplierRequestController  extends AbstractController<Supplier, Req
 	@Autowired
 	private SupplierRequestShowService	showService;
 
-//	@Autowired
-//	private SupplierItemCreateService createService;
-//	
-//	@Autowired
-//	private SupplierItemUpdateService updateService;
-//	
-//	@Autowired
-//	private SupplierItemDeleteService deleteService;
+	@Autowired
+	private SupplierRequestUpdateService updateService;
+
 
 	// Constructors -----------------------------------------------------------
 
@@ -40,5 +35,6 @@ public class SupplierRequestController  extends AbstractController<Supplier, Req
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 }

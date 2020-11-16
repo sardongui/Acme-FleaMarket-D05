@@ -3,12 +3,9 @@ supplier.item.form.label.ticker = Ticket
 supplier.request.form.label.quantity = Cantidad
 supplier.request.form.label.notes =Notas
 
-supplier.request.form.label.item = Producto
-supplier.request.form.label.item.title = Título del producto
-supplier.request.form.label.item.ticker = Ticket del producto
-supplier.request.form.label.item.itemCategory = Cetegoría del producto
-supplier.request.form.label.item.description = Descripción del producto
-supplier.request.form.label.item.price = Precio del producto
+supplier.item.form.label.referenceItem =Ticket del producto
+supplier.item.form.label.itemSupplier = Distribuidor
+
 supplier.request.form.label.rejectionJustification = Justificación del rechazo
 supplier.request.form.label.item.status = Estado
 supplier.request.form.label.item.status.pending = Pendiente

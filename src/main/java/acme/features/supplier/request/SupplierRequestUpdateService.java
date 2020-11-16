@@ -23,6 +23,7 @@ import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.components.Response;
+import acme.framework.entities.Principal;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
@@ -40,8 +41,20 @@ public class SupplierRequestUpdateService implements AbstractUpdateService<Suppl
 	@Override
 	public boolean authorise(final Request<RequestEntity> request) {
 		assert request != null;
+		
+		boolean result;
+		int requestId;
+		RequestEntity r;
+		Supplier supplier;
+		Principal principal;
 
-		return true;
+		requestId = request.getModel().getInteger("id");
+		r = this.repository.findOneById(requestId);
+		supplier = r.getItem().getSupplier();
+		principal = request.getPrincipal();
+		result = supplier.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -50,8 +63,7 @@ public class SupplierRequestUpdateService implements AbstractUpdateService<Suppl
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "item.itemCategory", "item.description", "item.price", "item.ticker", 
-				"item.title", "ticker", "creation");
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -59,6 +71,11 @@ public class SupplierRequestUpdateService implements AbstractUpdateService<Suppl
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		String referenceItem = entity.getItem().getTicker();
+		model.setAttribute("referenceItem", referenceItem);
+		String itemSupplier = entity.getItem().getSupplier().getUserAccount().getUsername();
+		model.setAttribute("itemSupplier", itemSupplier);
 
 		request.unbind(entity, model, "quantity", "notes","status","rejectionJustification");
 	}
@@ -68,7 +85,7 @@ public class SupplierRequestUpdateService implements AbstractUpdateService<Suppl
 		assert request != null;
 
 		RequestEntity result;
-		
+			
 		int id;
 		
 		id= request.getModel().getInteger("id");
