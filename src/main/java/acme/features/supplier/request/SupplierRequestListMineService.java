@@ -21,7 +21,7 @@ public class SupplierRequestListMineService implements AbstractListService<Suppl
 	@Override
 	public boolean authorise(Request<RequestEntity> request) {
 		assert request != null;
-		return true;
+		return request.getPrincipal().hasRole(Supplier.class);
 	}
 
 	@Override

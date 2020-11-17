@@ -12,6 +12,7 @@
 	<acme:form-textbox code="auditor.item.form.label.itemCategory" path="itemCategory"/>
 	<acme:form-money code="auditor.item.form.label.price" path="price"/>
 	<acme:form-url code="auditor.item.form.label.link" path="link"/>
+	<acme:form-textbox code="auditor.item.form.label.newItem" path="newItem"/>
 	
 	<jstl:if test="${command == 'show'  and myAuditRecord}">
 		<acme:form-submit method="get" code="auditor.audit-record.form.button.list"

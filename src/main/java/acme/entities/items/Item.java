@@ -66,6 +66,7 @@ public class Item extends DomainEntity {
 
 	// Derived attributes -----------------------------------------------------
 	
+	private boolean newItem;
 
 	// Relationships ----------------------------------------------------------
 
