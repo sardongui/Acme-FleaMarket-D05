@@ -20,3 +20,5 @@ sponsor.banner.form.button.return = Volver
 
 sponsor.banner.list.label.picture = Imagen
 sponsor.banner.list.label.slogan = Eslogan
+
+sponsor.banner.error.spam = No se permite el spam
