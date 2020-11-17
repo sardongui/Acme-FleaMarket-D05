@@ -2,9 +2,13 @@ authenticated.message.form.label.creation = Creation moment
 authenticated.message.form.label.title = Title
 authenticated.message.form.label.body = Message
 authenticated.message.form.label.tags = Tags
+authenticated.message.form.label.isConfirmed = Once created, the message cannot be updated or deleted. Confirm that you want to continue
 
 authenticated.message.list.label.creation= Creation moment
 authenticated.message.list.label.title= Title
 
 authenticated.message.form.button.return= Return 
 authenticated.message.form.button.create= Create
+
+authenticated.message.error.notConfirmed = You must confirm that you have read the warning in order to continue
+authenticated.message.error.spam = No spamming allowed

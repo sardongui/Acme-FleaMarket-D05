@@ -57,6 +57,7 @@ master.menu.authenticated.list-items = List of Items
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.auditor.list-requests = Auditors registration requests
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.customisation = Customisation 
 master.menu.administrator.shutdown = Shut down
@@ -134,6 +135,12 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-supplier = Become a supplier
 master.menu.user-account.supplier = Supplier data
+master.menu.user-account.become-buyer = Become a buyer
+master.menu.user-account.buyer = Buyer data
+master.menu.user-account.become-auditor = Become a auditor
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-sponsor = Become sponsor
+master.menu.user-account.sponsor = Sponsor data
 
 # master.footer ###############################################################
 

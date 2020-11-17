@@ -1,0 +1,7 @@
+
+authenticated.sponsor.form.label.firmName = Firm
+
+authenticated.sponsor.form.button.create = Create sponsor
+authenticated.sponsor.form.button.update = Update sponsor
+
+authenticated.sponsor.form.button.return = Back

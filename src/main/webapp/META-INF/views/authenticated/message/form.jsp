@@ -10,6 +10,9 @@
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title"/>
 	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
 	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags" placeholder="tag1,tag2,..." />
+	<jstl:if test="${command == 'create' }">
+		<acme:form-checkbox code="authenticated.message.form.label.isConfirmed" path="confirmed" />
+	</jstl:if>
 	
 	<acme:form-submit test="${command == 'create' }" method="post"
 		code="authenticated.message.form.button.create" 

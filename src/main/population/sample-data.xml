@@ -415,6 +415,7 @@
 	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
 		<property name="firm" value="Auditor firm" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement"/>
+		<property name="accepted" value="true"/>
 		<property name="userAccount" ref="auditor1UserAccount" />
 		<property name="auditRecords">
 			<list>
@@ -451,6 +452,7 @@
 	<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
 		<property name="firm" value="Auditor firm 2" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement 2"/>
+		<property name="accepted" value="true"/>
 		<property name="userAccount" ref="auditor2UserAccount" />
 		<property name="auditRecords">
 			<list>
@@ -670,6 +672,7 @@
 		<property name="creation" value="2020/11/08 16:40"/>
 		<property name="tags" value="advertencia"/>
 		<property name="body" value="Este producto no tiene la salida que esperábamos."/>
+		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum1" />
 	</bean>
 	
@@ -678,6 +681,7 @@
 		<property name="creation" value="2020/11/06 11:23"/>
 		<property name="tags" value="acierto, critica"/>
 		<property name="body" value="Parece que este producto esta teniendo bastante salida, deberíamos disponer de un stock alto."/>
+		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum1" />
 	</bean>
 	
@@ -686,6 +690,7 @@
 		<property name="creation" value="2020/11/06 11:50"/>
 		<property name="tags" value="ejemplo"/>
 		<property name="body" value="Otro ejemplo"/>
+		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum2" />
 	</bean>
 	
