@@ -12,6 +12,7 @@
 	<acme:form-textbox code="authenticated.item.form.label.itemCategory" path="itemCategory"/>
 	<acme:form-money code="authenticated.item.form.label.price" path="price"/>
 	<acme:form-url code="authenticated.item.form.label.link" path="link"/>
+	<acme:form-textbox code="authenticated.item.form.label.newItem" path="newItem"/>
 	
 	<jstl:if test="${command == 'show'}" >
 			

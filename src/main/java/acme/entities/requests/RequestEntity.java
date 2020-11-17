@@ -50,6 +50,7 @@ public class RequestEntity extends DomainEntity {
 	private RequestEntityStatus	status;					// PENDIENTE, ACEPTADO O RECHAZADO
 
 	private String				rejectionJustification;			// OBLIGATORIO AL RECHAZAR
+	
 
 	// Relationships ----------------------------------------------------------
 

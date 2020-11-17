@@ -352,6 +352,13 @@
 		<property name="photo" value="https://www.section03.com"/>
 	
 	</bean>
+	<bean id="section4" class="acme.entities.sections.Section">
+		<property name="indexer" value="4"/>
+		<property name="title" value="section04"/>
+		<property name="description" value="section04"/>
+		<property name="photo" value="https://www.section04.com"/>
+	
+	</bean>
 	
 	
 	<!-- Specification Sheet -->
@@ -372,6 +379,15 @@
 			</list>
 		</property>
 	</bean>
+	
+	<bean id="specificationSheet3" class="acme.entities.specificationSheets.SpecificationSheet">
+		<property name="sections">
+			<list>
+				<ref bean="section4" />
+			</list>
+		</property>
+	</bean>
+	
 	
 	
 	
@@ -524,6 +540,23 @@
 			</list>
 		</property>
 	</bean>
+	<bean id="item3" class="acme.entities.items.Item">
+		<property name="ticker" value="ALI-20-123123"/>
+		<property name="creationMoment" value="2020/11/14 19:47"/>
+		<property name="title" value="Tomates"/>
+		<property name="itemCategory" value="Alimentación"/>
+		<property name="description" value="Descripcion 03"/>
+		<property name="price" value="1€"/>
+		<property name="photo" value="https://www.item03.com"/>
+		<property name="link" value="https://www.item03.com"/>
+		<property name="specificationSheet" ref="specificationSheet3" />
+		<property name="supplier" ref="supplier1Supplier"/>
+		<property name="requests">
+			<list>
+				<ref bean="request3" />
+			</list>
+		</property>
+	</bean>
 	
 	
 	
@@ -621,6 +654,16 @@
   		<property name="rejectionJustification" value="Example justification" />
 	</bean>
 	
+	<bean id="request3" class="acme.entities.requests.RequestEntity">
+		<property name="ticker" value="ALI-20-123123"/>
+		<property name="creation" value="2020/11/14 12:50"/>
+		<property name="quantity" value="1.0"/>
+		<property name="item" ref="item3" />
+		<property name="buyer" ref="buyer1Buyer" />
+		<property name="status" value="ACCEPTED" />
+  		<property name="rejectionJustification" value="" />
+	</bean>
+	
 	<!-- Messages -->
 	<bean id="message1" class="acme.entities.messages.Message">
 		<property name="title" value="Poca salida"/>
@@ -646,6 +689,13 @@
 		<property name="forum" ref="forum2" />
 	</bean>
 	
+	<bean id="message4" class="acme.entities.messages.Message">
+		<property name="title" value="Ejemplo"/>
+		<property name="creation" value="2020/11/16 11:50"/>
+		<property name="tags" value="ejemplo"/>
+		<property name="body" value="Otro ejemplo"/>
+		<property name="forum" ref="forum3" />
+	</bean>
 	<!-- Forums -->
 	<bean id="forum1" class="acme.entities.forums.Forum">
 		<property name="item" ref="item1" />
@@ -653,6 +703,10 @@
 	
 	<bean id="forum2" class="acme.entities.forums.Forum">
 		<property name="item" ref="item2" />
+	</bean>
+	
+	<bean id="forum3" class="acme.entities.forums.Forum">
+		<property name="item" ref="item3" />
 	</bean>
 	
 	<!-- Sponsor -->
