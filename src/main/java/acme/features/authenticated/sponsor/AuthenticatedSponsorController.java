@@ -24,6 +24,9 @@ public class AuthenticatedSponsorController extends AbstractController<Authentic
 	@Autowired
 	private AuthenticatedSponsorUpdateService	updateService;
 
+	@Autowired
+	private AuthenticatedSponsorDeleteService	deleteService;
+
 
 	// Constructors -----------------------------------------------------------
 
@@ -31,5 +34,6 @@ public class AuthenticatedSponsorController extends AbstractController<Authentic
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 }

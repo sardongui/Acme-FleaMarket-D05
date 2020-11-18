@@ -30,3 +30,4 @@ authenticated.buyer.form.button.return = Return
 
 buyer.error.phone = Must match pattern: +CC TLF or TLF
 creditCard.error.cvv = The CVV must be 3 or 4 digits
+creditCard.error.year = The year must be 4 digits

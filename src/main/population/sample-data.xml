@@ -803,7 +803,7 @@
 	</bean>
 
 	<bean name="sponsor3Sponsor" class="acme.entities.roles.Sponsor">
-		<property name="firmName" value="Gigabyte" />
+		<property name="firmName" value="Razer" />
 		<property name="creditCard" ref="creditCard02" />
 		<property name="userAccount" ref="sponsor3UserAccount" />
 		<property name="banners">
@@ -837,7 +837,7 @@
 	</bean>
 
 	<bean name="sponsor4Sponsor" class="acme.entities.roles.Sponsor">
-		<property name="firmName" value="Gigabyte" />
+		<property name="firmName" value="Versus" />
 		<property name="userAccount" ref="sponsor4UserAccount" />
 		<property name="banners">
 			<list>

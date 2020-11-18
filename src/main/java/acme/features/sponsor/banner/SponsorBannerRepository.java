@@ -25,6 +25,9 @@ public interface SponsorBannerRepository extends AbstractRepository {
 	@Query("select s.banners from Sponsor s where s.id=?1")
 	Collection<Banner> findManyBySponsorId(int sponsorId);
 
-	@Query("select b from Banner b, Sponsor s where s.creditCard.id=b.creditCard.id and s.id=?1")
+	@Query("select b from Banner b, Sponsor s where s.creditCard.id!=null and s.creditCard.id=b.creditCard.id and s.id=?1")
 	Collection<Banner> anyCreditCardLinked(int sponsorId);
+
+	@Query("select b from Banner b, CreditCard c where b.creditCard.id!=null and b.creditCard.id=c.id and c.id=?1")
+	Banner isLinkedByCreditCardId(int idCreditCard);
 }
