@@ -8,7 +8,7 @@ sponsor.creditCard.form.label.cvv = CVV
 
 sponsor.creditCard.form.button.update = Actualizar
 sponsor.creditCard.form.button.create = Crear
-sponsor.creditCard.form.button.delete = Borrar
+sponsor.creditCard.form.button.delete = Desvincular
 
 sponsor.creditCard.form.button.return = Atrás
 
@@ -20,3 +20,4 @@ sponsor.creditCard.list.label.year = Año expiración
 sponsor.creditCard.list.label.cvv = CVV
 
 creditCard.error.cvv = El CVV debe tener 3 o 4 dígitos
+creditCard.error.year = El año debe tener 4 dígitos

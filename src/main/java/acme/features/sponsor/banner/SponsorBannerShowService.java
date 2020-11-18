@@ -35,18 +35,17 @@ public class SponsorBannerShowService implements AbstractShowService<Sponsor, Ba
 		Principal principal = request.getPrincipal();
 		Sponsor sponsor = this.repository.findSponsorById(principal.getActiveRoleId());
 
+		model.setAttribute("bannerHasCreditCard", entity.getCreditCard() != null);
+
 		model.setAttribute("sponsorHasCreditCard", sponsor.getCreditCard() != null);
+
 		if (sponsor.getCreditCard() != null) {
 			model.setAttribute("sponsorCreditCard", sponsor.getCreditCard().getId());
-		}
-
-		model.setAttribute("bannerHasCreditCard", entity.getCreditCard() != null);
-		if (entity.getCreditCard() != null) {
-			model.setAttribute("bannerCreditCard", entity.getCreditCard().getId());
+			model.setAttribute("isExpired", sponsor.getCreditCard().isExpired());
 		}
 
 		Collection<Banner> banners = this.repository.anyCreditCardLinked(principal.getActiveRoleId());
-		model.setAttribute("creditCardLinked", banners != null);
+		model.setAttribute("creditCardLinked", banners.size() > 0);
 
 		int id = entity.getId();
 		model.setAttribute("banner", id);

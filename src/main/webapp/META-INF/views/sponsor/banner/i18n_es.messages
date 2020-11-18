@@ -2,7 +2,8 @@ sponsor.banner.form.label.picture = Imagen
 sponsor.banner.form.label.slogan = Eslogan
 sponsor.banner.form.label.target = URL
 
-sponsor.banner.creditCard.form.legend.creditCard = Tarjeta de crédito vinculada
+sponsor.banner.creditCard.form.legend.creditCard = Tarjeta de crédito vinculada (En caso de no usarse, dejar campos en blanco)
+sponsor.banner.creditCard.form.legend.creditCard.used = Tarjeta de crédito vinculada
 sponsor.banner.creditCard.form.label.holderName = Nombre del propietario
 sponsor.banner.creditCard.form.label.number = Número
 sponsor.banner.creditCard.form.label.brand = Marca
@@ -10,7 +11,7 @@ sponsor.banner.creditCard.form.label.month = Mes expiración
 sponsor.banner.creditCard.form.label.year = Año expiración
 sponsor.banner.creditCard.form.label.cvv = CVV
 
-sponsor.banner.form.button.addCreditCard = Añadir tarjeta crédito
+sponsor.banner.form.button.linkCreditCard = Vincular tarjeta crédito
 sponsor.banner.form.button.showCreditCard = Mostrar tarjeta crédito
 sponsor.banner.form.button.update = Actualizar
 sponsor.banner.form.button.delete = Borrar
@@ -22,3 +23,7 @@ sponsor.banner.list.label.picture = Imagen
 sponsor.banner.list.label.slogan = Eslogan
 
 sponsor.banner.error.spam = No se permite el spam
+sponsor.banner.error.noFoundCreditCard = No se detectó ninguna tarjeta de crédito disponible 
+sponsor.banner.error.foundCreditCard = Tarjeta de crédito del usuario detectada
+sponsor.banner.error.expiredCreditCard = La tajeta de crédito detectada ha expirado. Por favor, registre una tarjeta válida en la configuración de su perfil
+sponsor.banner.error.creditCardLinked = Su tarjeta de crédito ya se encuentra vinculada a un banner. Desvincúlela para poder usarla

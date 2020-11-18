@@ -80,10 +80,7 @@ public class SponsorBannerDeleteService implements AbstractDeleteService<Sponsor
 
 		sponsor.getBanners().remove(entity);
 
-		if (entity.getCreditCard() != null) {
-			sponsor.setCreditCard(null);
-			this.creditCardRepository.delete(entity.getCreditCard());
-		}
+		entity.setCreditCard(null);
 
 		this.repository.delete(entity);
 

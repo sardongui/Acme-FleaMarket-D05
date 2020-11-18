@@ -21,34 +21,66 @@
 	<acme:form-url code="sponsor.banner.form.label.target" path="target"/>
 	<br/>
 	
-	<jstl:if test="${command == 'show' and sponsorHasCreditCard}" >
+	<jstl:if test="${command != 'create' and bannerHasCreditCard}" >
 	
-		<jstl:if test="${command == 'show' and bannerHasCreditCard}" >
-			<fieldset>
-				<legend><acme:message code="sponsor.banner.creditCard.form.legend.creditCard"/></legend>
-				<acme:form-textbox readonly="true" code="sponsor.banner.creditCard.form.label.number" path="creditCard.number" />
-			</fieldset>
-			<acme:form-submit method="get" code="sponsor.banner.form.button.showCreditCard" 
-			action="/sponsor/credit-card/show?id=${sponsorCreditCard}&banner=${banner}"/>
-		</jstl:if>
+		<fieldset>
+			<legend><acme:message code="sponsor.banner.creditCard.form.legend.creditCard.used"/></legend>
+			<acme:form-textbox readonly="true" code="sponsor.banner.creditCard.form.label.number" path="creditCard.number" />
+		</fieldset>
+		<acme:form-submit method="get" code="sponsor.banner.form.button.showCreditCard" 
+		action="/sponsor/credit-card/show?id=${sponsorCreditCard}&banner=${banner}"/>
+			
+	</jstl:if>
+	
+	<jstl:if test="${command != 'create' and not bannerHasCreditCard}" >
+	
+		<jstl:if test="${command != 'create' and sponsorHasCreditCard and not creditCardLinked and isExpired == false}" >
 		
-		<jstl:if test="${command == 'show' and not bannerHasCreditCard and not creditCardLinked}" >
-		
-			<acme:form-submit method="get"
-			code="sponsor.banner.form.button.addCreditCard" 
-			action="/sponsor/credit-card/create?banner=${banner}"
-			/>
+			<acme:form-submit code="sponsor.banner.form.button.linkCreditCard" action="/sponsor/banner/update?linkTo=true"	/>
 		
 		</jstl:if>
 	
 	</jstl:if>
 	
-	<jstl:if test="${command == 'show' and not sponsorHasCreditCard}" >
+	<jstl:if test="${command == 'create'}" >
+	
+		<fieldset>
+			<legend><acme:message code="sponsor.banner.creditCard.form.legend.creditCard.used"/></legend>
+		</fieldset>
+		
+		<jstl:if test="${creditCardLinked}">
+			<span style="color:red"><acme:message code="sponsor.banner.error.creditCardLinked"/></span>
+			<br/><br/>
+		</jstl:if>
+		
+		<jstl:if test="${!creditCardLinked}">
 			
-			<acme:form-submit method="get"
-			code="sponsor.banner.form.button.addCreditCard" 
-			action="/sponsor/credit-card/create?banner=${banner}"
-			/>
+			<jstl:if test="${hasCreditCard}">
+			
+				<jstl:if test="${!isExpired}">
+					<span style="color:green"><acme:message code="sponsor.banner.error.foundCreditCard"/></span>
+					<br/><br/>
+					<acme:form-textbox readonly="true" code="sponsor.banner.creditCard.form.label.holderName" path="creditCard.holderName"/>
+					<acme:form-textbox readonly="true" code="sponsor.banner.creditCard.form.label.number" path="creditCard.number" />
+					<acme:form-textbox readonly="true" code="sponsor.banner.creditCard.form.label.brand" path="creditCard.brand"/>
+					<acme:form-integer readonly="true" code="sponsor.banner.creditCard.form.label.month" path="creditCard.month" />
+					<acme:form-integer readonly="true" code="sponsor.banner.creditCard.form.label.year" path="creditCard.year" />
+					<acme:form-integer readonly="true" code="sponsor.banner.creditCard.form.label.cvv" path="creditCard.cvv" />
+				</jstl:if>
+				
+				<jstl:if test="${isExpired}">
+					<span style="color:red"><acme:message code="sponsor.banner.error.expiredCreditCard"/></span>
+					<br/><br/>
+				</jstl:if>
+				
+			</jstl:if>
+			
+			<jstl:if test="${!hasCreditCard}">
+				<span><acme:message code="sponsor.banner.error.noFoundCreditCard"/></span>
+				<br/><br/>
+			</jstl:if>
+			
+		</jstl:if>
 			
 	</jstl:if>
 	
@@ -67,6 +99,9 @@
 	<acme:form-submit test="${command == 'update' }" method="post"
 		code="sponsor.banner.form.button.update" 
 		action="/sponsor/banner/update"/>
+	<acme:form-submit test="${command == 'update' }"
+		code="sponsor.banner.form.button.delete" 
+		action="/sponsor/banner/delete"/>
 	<acme:form-submit test="${command == 'delete' }"
 		code="sponsor.banner.form.button.delete" 
 		action="/sponsor/banner/delete"/>

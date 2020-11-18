@@ -16,25 +16,14 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="sponsor.creditCard.form.label.holderName" path="holderName"/>
-	<acme:form-textbox code="sponsor.creditCard.form.label.number" path="number" />
-	<acme:form-textbox code="sponsor.creditCard.form.label.brand" path="brand"/>
-	<acme:form-integer code="sponsor.creditCard.form.label.month" path="month" placeholder="mm" />
-	<acme:form-integer code="sponsor.creditCard.form.label.year" path="year" placeholder="yyyy" />
-	<acme:form-integer code="sponsor.creditCard.form.label.cvv" path="cvv" placeholder="XXXX"/>
-	
-	<acme:form-submit method="post" test="${command == 'create'}"
-	 	code="sponsor.creditCard.form.button.create"
-	 	action="/sponsor/credit-card/create" />
+	<acme:form-textbox readonly="true" code="sponsor.creditCard.form.label.holderName" path="holderName"/>
+	<acme:form-textbox readonly="true" code="sponsor.creditCard.form.label.number" path="number" />
+	<acme:form-textbox readonly="true" code="sponsor.creditCard.form.label.brand" path="brand"/>
+	<acme:form-integer readonly="true" code="sponsor.creditCard.form.label.month" path="month" placeholder=" " />
+	<acme:form-integer readonly="true" code="sponsor.creditCard.form.label.year" path="year" placeholder=" " />
+	<acme:form-integer readonly="true" code="sponsor.creditCard.form.label.cvv" path="cvv" placeholder=" "/>
 
 	<jstl:if test="${command !='create' }">
-		<acme:form-submit test="${command == 'show' }"
-			code="sponsor.creditCard.form.button.update" 
-			action="/sponsor/credit-card/update"/>
-			
-		<acme:form-submit test="${command == 'update' }"
-			code="sponsor.creditCard.form.button.update" 
-			action="/sponsor/credit-card/update"/>
 			
 		<acme:form-submit test="${command == 'show' }"
 			code="sponsor.creditCard.form.button.delete" 
