@@ -14,6 +14,7 @@ authenticated.item.list.label.newItem=New Item
 
 authenticated.item.form.button.return= Return 
 
+authenticated.audit-record.form.button.list = List Audit Record
 authenticated.item.form.button.viewMessages = View forum
 authenticated.item.form.button.newMessage = New forum message
 authenticated.item.form.button.orderItem = Order it

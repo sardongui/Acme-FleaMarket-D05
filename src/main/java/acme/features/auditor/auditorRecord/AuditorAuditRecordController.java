@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
 import acme.entities.auditRecords.AuditRecord;
-
 import acme.entities.roles.Auditor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
@@ -28,8 +27,12 @@ public class AuditorAuditRecordController  extends AbstractController<Auditor, A
 
 	@Autowired
 	private AuditorAuditRecordShowService	showService;
-
-
+	
+	@Autowired
+	private AuditorAuditRecordCreateService createService;
+	
+	@Autowired
+	private AuditorAuditRecordUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -38,5 +41,7 @@ public class AuditorAuditRecordController  extends AbstractController<Auditor, A
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listNotMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 }

@@ -1,4 +1,4 @@
-package acme.features.auditor.item;
+package acme.features.authenticated.auditRecord;
 
 import javax.annotation.PostConstruct;
 
@@ -6,37 +6,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.components.CustomCommand;
-import acme.entities.items.Item;
-import acme.entities.roles.Auditor;
+import acme.entities.auditRecords.AuditRecord;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/auditor/item/")
-public class AuditorItemController  extends AbstractController<Auditor, Item>{
-
+@RequestMapping("/authenticated/audit-record/")
+public class AuthenticatedAuditRecordController extends AbstractController<Authenticated, AuditRecord>{
 
 	// Internal state ---------------------------------------------------------
-
 	@Autowired
-	private AuditorItemListMineService	listMineService;
-	
+	private AuthenticatedAuditRecordListService	listService;
 	@Autowired
-	private AuditorItemListNotMineService	listNotMineService;
-
-	@Autowired
-	private AuditorItemShowService	showService;
-
+	private AuthenticatedAuditRecordShowService	showService;
 
 
 	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
-		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listNotMineService);
+		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-	
 	}
+
 }

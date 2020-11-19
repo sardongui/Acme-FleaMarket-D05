@@ -42,9 +42,7 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 		assert entity != null;
 		assert model != null;
 		
-		
-		
-		request.unbind(entity, model, "title", "creationMoment", "status", "body");
+		request.unbind(entity, model, "title", "creationMoment", "status", "body", "item.title", "finalMode");
 		
 	}
 
@@ -55,9 +53,10 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 		AuditRecord result;
 		int id;
 
+		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
-
+		
 		return result;
 	}
 

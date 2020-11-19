@@ -14,6 +14,7 @@ authenticated.item.list.label.newItem = Nuevo Producto
 
 authenticated.item.form.button.return= Atrás 
 
+authenticated.audit-record.form.button.list = Listar registro de auditorías
 authenticated.item.form.button.viewMessages = Ver foro
 authenticated.item.form.button.newMessage = Nuevo mensaje de foro
 authenticated.item.form.button.orderItem = Pedir producto
