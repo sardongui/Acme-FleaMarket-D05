@@ -8,5 +8,6 @@ buyer.request.list.label.creation= Momento de creación
 buyer.request.list.label.quantity = Cantidad
 
 buyer.request.form.button.return= Atrás 
+buyer.request.form.button.create= Crear
 
 buyer.request.ticker.pattern= El código del pedido no es válido

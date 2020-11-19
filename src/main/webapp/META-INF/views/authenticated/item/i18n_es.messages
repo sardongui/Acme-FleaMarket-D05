@@ -16,3 +16,4 @@ authenticated.item.form.button.return= Atrás
 
 authenticated.item.form.button.viewMessages = Ver foro
 authenticated.item.form.button.newMessage = Nuevo mensaje de foro
+authenticated.item.form.button.orderItem = Pedir producto

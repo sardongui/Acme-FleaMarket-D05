@@ -8,5 +8,6 @@ buyer.request.list.label.creation= Creation moment
 buyer.request.list.label.quantity = Quantity
 
 buyer.request.form.button.return= Back 
+buyer.request.form.button.create= Create 
 
 buyer.request.ticker.pattern= The request ticker is not valid
