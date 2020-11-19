@@ -41,6 +41,10 @@
 		<canvas id="ratioOfSponsorsGroupedByCreditCard"></canvas>
 	</div>
 	<br></br>
+	<div>
+	<acme:message code="administrator.chart.form.label.RequestsByStatus"/>
+    	<canvas id="ratioOfRequestsGroupedByStatus"></canvas>
+	</div>
 	
 	<script type ="text/javascript">
 	$(document).ready(function(){
@@ -168,6 +172,102 @@
 			 data: DataCompany
 		 });
 	 });
+	 
+	 $(document).ready(function(){
+		 var CanvasInvestor = document.getElementById("ratioOfRequestsGroupedByStatus");
+		 Chart.defaults.global.defaultFontFamily = "Modeka";
+		 Chart.defaults.global.defaultFontSize = 15;
+		 
+		 var DataInvestor = {
+				 labels : [
+					 <jstl:forEach items = "${ratioOfRequestsGroupedByStatus}" var="item">
+					 "<jstl:out value= "${item[0]}" />" ,
+					 </jstl:forEach>
+				 ],
+				 datasets:[
+					 {
+						 data: [
+							 <jstl:forEach items= "${ratioOfRequestsGroupedByStatus}" var="item">
+							 "<jstl:out value = "${item[1]}" />" ,
+							 </jstl:forEach>
+						 ],
+						 backgroundColor :["blue", "red", "green"]
+					 }
+				 ]
+		 };
+		 var pieChartInvestor = new Chart(CanvasInvestor, {
+			 type: 'pie',
+			 data: DataInvestor
+		 });
+	 });
+	 
+	 
+	 $(document).ready(function(){
+		 var CanvasApplicationsByDays = document.getElementById("TimeSeriesRequests");
+		 Chart.defaults.global.defaultFontFamily = "Modeka";
+		 Chart.defaults.global.defaultFontSize = 15;
+		 
+		 var DataApplicationsByDays = {
+				 labels : [
+					 <jstl:forEach items = "${allDatesBeforeThreeWeeks}" var="item">
+					 "<jstl:out value= "${item}" />" ,
+					 </jstl:forEach>
+				 ],
+				 datasets:[
+					 {
+						 data: [
+							 <jstl:forEach items="${allDatesBeforeThreeWeeks}" var="item">
+							 <jstl:set var="value" value="0"/>
+							 <jstl:forEach items="${numberOfRejectedRequestsLastThreeWeeks}" var="item2">
+							   <jstl:if test="${item == item2[0]}">
+							      <jstl:set var="value" value="${item2[1]}"/>
+							   </jstl:if>
+							 </jstl:forEach>
+							 <jstl:out value="${value}"/>,
+							 </jstl:forEach>
+						 ],
+						 borderColor:["red"],
+		                 label:"<acme:message code='administrator.chart.form.label.RejectedRequests'/>"
+					 },
+					 {
+					     data: [
+					    	 <jstl:forEach items="${allDatesBeforeThreeWeeks}" var="item">
+							 <jstl:set var="value" value="0"/>
+							 <jstl:forEach items="${numberOfPendingRequestsLastThreeWeeks}" var="item2">
+							   <jstl:if test="${item == item2[0]}">
+							      <jstl:set var="value" value="${item2[1]}"/>
+							   </jstl:if>
+							 </jstl:forEach>
+							 <jstl:out value="${value}"/>,
+							 </jstl:forEach>
+					     ],
+						 borderColor:["blue"],
+	                     label:"<acme:message code='administrator.chart.form.label.PendingRequests'/>"
+					 },
+					 {
+						 data: [
+							 <jstl:forEach items="${allDatesBeforeThreeWeeks}" var="item">
+							 <jstl:set var="value" value="0"/>
+							 <jstl:forEach items="${numberOfAcceptedRequestsLastThreeWeeks}" var="item2">
+							   <jstl:if test="${item == item2[0]}">
+							      <jstl:set var="value" value="${item2[1]}"/>
+							   </jstl:if>
+							 </jstl:forEach>
+							 <jstl:out value="${value}"/>,
+							 </jstl:forEach>
+						 ],
+						 borderColor:["green"],
+						 label:"<acme:message code='administrator.chart.form.label.AcceptedRequests'/>",
+					 }
+				 ]
+		 
+		 };
+					
+		 var pieChartApplicationsByDays = new Chart(CanvasApplicationsByDays, {
+			 type: 'line',
+			 data: DataApplicationsByDays,
+		 });
+	 }); 
 	 
 	</script>
 

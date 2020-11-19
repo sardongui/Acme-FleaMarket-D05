@@ -1,6 +1,11 @@
 
 package acme.features.administrator.chart;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +36,9 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 
 		request.unbind(entity, model, "numberOfNewsGroupedByCategory", "ratioOfWarningNewsVersusRestOfit",
 				"numberOfAdvertisementsGroupedByDiscount", "ratioOfItemsGroupedByItemCategory", 
-				"ratioOfSponsorsGroupedByCreditCard");
+				"ratioOfSponsorsGroupedByCreditCard","numberOfRejectedRequestsLastThreeWeeks",
+				"numberOfPendingRequestsLastThreeWeeks", "numberOfAcceptedRequestsLastThreeWeeks",
+				"allDatesBeforeThreeWeeks", "ratioOfRequestsGroupedByStatus");
 	}
 
 	@Override
@@ -54,6 +61,29 @@ public class AdministratorChartShowService implements AbstractShowService<Admini
 		Object[] ratioOfSponsorsGroupedByCreditCard = this.repository.findSponsorByCreditCard();
 		result.setRatioOfSponsorsGroupedByCreditCard(ratioOfSponsorsGroupedByCreditCard);
 		
+		Object[] requestsByStatement = this.repository.findRequestStatus();
+		result.setRatioOfRequestsGroupedByStatus(requestsByStatement);
+		
+		Calendar calendar;
+		String[] allDatesBeforeThreeWeeks = new String[15];
+
+		calendar = new GregorianCalendar();
+		calendar.setTime(new Date(System.currentTimeMillis()));
+		calendar.add(Calendar.DATE, -15);
+		Object[] rejectedRequestsByDays = this.repository.findRejectedRequestsLastThreeWeeks(calendar.getTime());
+		result.setNumberOfRejectedRequestsLastThreeWeeks(rejectedRequestsByDays);
+		Object[] pendingRequestsByDays = this.repository.findPendingRequestsLastThreeWeeks(calendar.getTime());
+		result.setNumberOfPendingRequestsLastThreeWeeks(pendingRequestsByDays);
+		Object[] acceptedRequestsByDays = this.repository.findAcceptedRequestsLastThreeWeeks(calendar.getTime());
+		result.setNumberOfAcceptedRequestsLastThreeWeeks(acceptedRequestsByDays);
+
+		//Obteniendo todas las fechas de 15 días anteriores = 3 semanas anteriores
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+		for (Integer i = 0; i < 15; i++) {
+			calendar.add(Calendar.DAY_OF_MONTH, 1);
+			allDatesBeforeThreeWeeks[i] = formatoFecha.format(calendar.getTime());
+		}
+		result.setAllDatesBeforeThreeWeeks(allDatesBeforeThreeWeeks);	
 
 		return result;
 	}

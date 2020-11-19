@@ -1,6 +1,8 @@
 
 package acme.features.administrator.chart;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -23,4 +25,17 @@ public interface AdministratorChartRepository extends AbstractRepository {
 	
 	@Query("select count(s), (select count(ss) from Sponsor ss where ss.creditCard.expired='false'), (select count(sss) from Sponsor sss where sss.creditCard.expired='true') from Sponsor s where s.creditCard is null")
 	Object[] findSponsorByCreditCard();
+	
+	@Query("select a.status,count(a) FROM RequestEntity a group by a.status order by a.status")
+	Object[] findRequestStatus();
+	
+	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 2 group by day(a.creation)")
+	Object[] findRejectedRequestsLastThreeWeeks(Date d);
+
+	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 0 group by day(a.creation)")
+	Object[] findPendingRequestsLastThreeWeeks(Date d);
+
+	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 1 group by day(a.creation)")
+	Object[] findAcceptedRequestsLastThreeWeeks(Date d);
+
 }
