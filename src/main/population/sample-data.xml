@@ -16,7 +16,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
-	
+
 	<!-- DonaireBulletin -->
 	<bean id="DonaireBulletin01" class="acme.entities.bulletins.DonaireBulletin">
 		<property name="author" value="Carlos Ruiz Zafón"/>
