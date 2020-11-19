@@ -25,7 +25,17 @@
 			code="authenticated.item.form.button.newMessage" 
 			action="/authenticated/message/create?item=${item}&forum=${forum}"/>
 			
+			<jstl:if test="${isFinalMode}" >
+				<acme:check-access test="hasRole('Buyer')">
+					<acme:form-submit method="get"
+					code="authenticated.item.form.button.orderItem" 
+					action="/buyer/request-entity/create?item=${item}"/>
+				</acme:check-access>
+			</jstl:if>
+			
 	</jstl:if>
+	
+	<input id="item" name="item" value="${item}" type="hidden" />
 	
 	<acme:form-return code="authenticated.item.form.button.return"/>
 </acme:form>

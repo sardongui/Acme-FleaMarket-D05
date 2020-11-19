@@ -100,7 +100,7 @@ master.menu.supplier.list-request = List de Peticiones
 master.menu.buyer ########################################################
 
 master.menu.buyer = Comprador
-master.menu.buyer.list-request = Lista de peticiones
+master.menu.buyer.list-request = Lista de pedidos
 
 master.menu.sponsor ########################################################
 

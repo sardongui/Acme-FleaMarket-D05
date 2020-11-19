@@ -516,6 +516,7 @@
 		<property name="price" value="2.56€"/>
 		<property name="photo" value="https://www.item01.com"/>
 		<property name="link" value="https://www.item01.com"/>
+		<property name="finalMode" value="true"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
 		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">
@@ -534,6 +535,7 @@
 		<property name="price" value="650€"/>
 		<property name="photo" value="https://www.item02.com"/>
 		<property name="link" value="https://www.item02.com"/>
+		<property name="finalMode" value="true"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
 		<property name="supplier" ref="supplier2Supplier"/>
 		<property name="requests">
@@ -668,10 +670,10 @@
 	
 	<!-- Messages -->
 	<bean id="message1" class="acme.entities.messages.Message">
-		<property name="title" value="Poca salida"/>
+		<property name="title" value="Me gusta"/>
 		<property name="creation" value="2020/11/08 16:40"/>
-		<property name="tags" value="advertencia"/>
-		<property name="body" value="Este producto no tiene la salida que esperábamos."/>
+		<property name="tags" value="positivo"/>
+		<property name="body" value="Me gusta este producto."/>
 		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum1" />
 	</bean>
@@ -679,8 +681,8 @@
 	<bean id="message2" class="acme.entities.messages.Message">
 		<property name="title" value="Buena venta"/>
 		<property name="creation" value="2020/11/06 11:23"/>
-		<property name="tags" value="acierto, critica"/>
-		<property name="body" value="Parece que este producto esta teniendo bastante salida, deberíamos disponer de un stock alto."/>
+		<property name="tags" value="acierto,critica"/>
+		<property name="body" value="Buena calidad."/>
 		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum1" />
 	</bean>
