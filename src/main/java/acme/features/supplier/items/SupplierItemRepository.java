@@ -9,6 +9,8 @@ import acme.entities.customisations.Customisation;
 import acme.entities.items.Item;
 import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
+import acme.entities.sections.Section;
+import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -34,4 +36,10 @@ public interface SupplierItemRepository extends AbstractRepository{
 
 	@Query("select i.requests from Item i where i.id=?1")
 	Collection<RequestEntity> findRequestByItemId(int id);
+
+	@Query("select i.specificationSheet from Item i where i.id=?1")
+	SpecificationSheet findSpecificationSheetById(int id);
+
+	@Query("select i.specificationSheet.sections from Item i where i.id=?1")
+	Collection<Section> findAllSections();
 }

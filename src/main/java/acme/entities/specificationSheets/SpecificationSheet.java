@@ -24,7 +24,8 @@ public class SpecificationSheet extends DomainEntity {
 	
 	@NotNull
 	@OneToMany()
-	private Collection<@Valid Section> sections;
+	@Valid
+	private Collection<Section> sections;
 	
 
 }

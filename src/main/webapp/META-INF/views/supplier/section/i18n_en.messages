@@ -1,0 +1,9 @@
+supplier.section.form.label.indexer = Indexer
+supplier.section.form.label.title = Title
+supplier.section.form.label.description = Description
+supplier.section.form.label.photo = Photo
+
+supplier.section.list.label.indexer = Indexer
+supplier.section.list.label.title = Title
+
+supplier.section.form.button.return=Return 

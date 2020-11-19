@@ -6,6 +6,7 @@ supplier.item.form.label.description = Description
 supplier.item.form.label.itemCategory = Item Category
 supplier.item.form.label.price= Price
 supplier.item.form.label.link= Link with Info Additional
+supplier.item.form.label.sectionTitle= SpecificationSheet
 
 supplier.item.list.label.creationMoment=Creation moment
 supplier.item.list.label.title=Title
