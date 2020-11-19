@@ -20,5 +20,11 @@ public class Chart implements Serializable {
 	Object[]					numberOfAdvertisementsGroupedByDiscount;
 	Object[]					ratioOfItemsGroupedByItemCategory;
 	Object[]					ratioOfSponsorsGroupedByCreditCard;
+	Object[] 					ratioOfRequestsGroupedByStatus;
+	Object[]					numberOfRejectedRequestsLastThreeWeeks;
+	Object[]					numberOfPendingRequestsLastThreeWeeks;
+	Object[]					numberOfAcceptedRequestsLastThreeWeeks;
+	String[]					allDatesBeforeThreeWeeks;
+	
 
 }
