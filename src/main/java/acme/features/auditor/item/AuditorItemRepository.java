@@ -14,7 +14,7 @@ import acme.framework.repositories.AbstractRepository;
 public interface AuditorItemRepository extends AbstractRepository{
 
 	//@Query("select i from Item i where i.auditRecords=?1")
-	@Query("select a.item from AuditRecord a where a.auditor.id=?1")
+	@Query("select distinct a.item from AuditRecord a where a.auditor.id=?1")
 	Collection<Item> findManyByAuditorId(int auditorId);
 	
 	@Query("select distinct a.item from AuditRecord a where a.id not in (select a from AuditRecord a where a.auditor.id=?1)")

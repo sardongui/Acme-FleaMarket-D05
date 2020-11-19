@@ -32,6 +32,8 @@
 					action="/buyer/request-entity/create?item=${item}"/>
 				</acme:check-access>
 			</jstl:if>
+			<acme:form-submit method="get" code="authenticated.audit-record.form.button.list"
+	 	action="/authenticated/audit-record/list?item=${item}"/>
 			
 	</jstl:if>
 	
