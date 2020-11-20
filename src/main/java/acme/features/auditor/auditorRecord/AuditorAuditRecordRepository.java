@@ -27,4 +27,7 @@ public interface AuditorAuditRecordRepository extends AbstractRepository{
 
 	@Query("select a from AuditRecord a where a.auditor.id!=?1 and a.item.id=?2")
 	Collection<AuditRecord> findManyByNotAuditorIdByItemId(int activeRoleId, int itemId);
+
+	@Query("select a from AuditRecord a where a.item.id=?1")
+	Collection<AuditRecord> findManyByItemId(int id);
 }

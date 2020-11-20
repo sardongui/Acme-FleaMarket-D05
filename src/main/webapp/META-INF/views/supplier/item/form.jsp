@@ -13,11 +13,7 @@
 	<acme:form-textbox code="supplier.item.form.label.itemCategory" path="itemCategory"/>
 	<acme:form-money code="supplier.item.form.label.price" path="price"/>
 	<acme:form-url code="supplier.item.form.label.link" path="link"/>
-	<acme:form-textbox code="supplier.item.form.label.specificationSheet" path="specificationSheet"/>
-	<acme:form-textbox code="supplier.item.form.label.section" path="specificationSheet.sections.title"/>
-	<acme:form-textbox code="supplier.item.form.label.sectionIndex" path="specificationSheet.sections.indexer"/>
-	<acme:form-textbox code="supplier.item.form.label.sectionDescription" path="specificationSheet.sections.description"/>
-	
+
 	
 	<jstl:if test="${!finalMode}">
 	<acme:form-submit test="${idsupplier==idprincipal}" code="supplier.item.form.button.update" action="/supplier/item/update?id=${id}" />	

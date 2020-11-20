@@ -1,9 +1,9 @@
 package acme.entities.specificationSheets;
-
-
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -23,7 +23,7 @@ public class SpecificationSheet extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 	
 	@NotNull
-	@OneToMany()
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@Valid
 	private Collection<Section> sections;
 	

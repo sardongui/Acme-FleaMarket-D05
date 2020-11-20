@@ -4,6 +4,7 @@ package acme.entities.items;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -20,7 +21,6 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.requests.RequestEntity;
-
 import acme.entities.roles.Supplier;
 import acme.entities.specificationSheets.SpecificationSheet;
 import acme.framework.datatypes.Money;
@@ -74,9 +74,8 @@ public class Item extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne(optional = false, cascade = CascadeType.ALL)
 	private SpecificationSheet	specificationSheet;
 
 	@NotNull
