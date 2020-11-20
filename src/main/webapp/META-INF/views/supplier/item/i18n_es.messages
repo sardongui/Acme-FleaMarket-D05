@@ -16,3 +16,8 @@ supplier.item.form.button.create = Crear
 supplier.item.form.button.delete = Borrar
 
 supplier.item.form.button.return=Atrás 
+
+supplier.item.form.error.tickerIncorrecto= Ticket incorrecto
+supplier.item.form.error.tickerRepetido= Ticket repetido
+supplier.item.form.error.tituloConSpam = Título con spam
+supplier.item.form.error.descripcionConSpam = Descripción con spam

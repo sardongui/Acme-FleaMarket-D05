@@ -70,7 +70,8 @@ public class Item extends DomainEntity {
 	private String				status;
 
 	// Derived attributes -----------------------------------------------------
-	
+
+	private boolean						newItem;
 
 	// Relationships ----------------------------------------------------------
 

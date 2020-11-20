@@ -34,7 +34,7 @@ public class SupplierItemUpdateService implements AbstractUpdateService<Supplier
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "ticker", "creationMoment");
+		request.bind(entity, errors, "creationMoment");
 		
 	}
 
@@ -44,7 +44,7 @@ public class SupplierItemUpdateService implements AbstractUpdateService<Supplier
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "itemCategory", "description", "price", "photo", "link");
+		request.unbind(entity, model, "title","ticker", "itemCategory", "description", "price", "photo", "link");
 		
 	}
 

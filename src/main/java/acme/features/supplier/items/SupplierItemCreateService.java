@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.customisations.Customisation;
 import acme.entities.items.Item;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.entities.sections.Section;
 import acme.entities.specificationSheets.SpecificationSheet;
@@ -46,8 +47,8 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "status", "finalMode", "creationMoment", "supplier", 
-				"ticker");
+
+		request.bind(entity, errors, "status", "finalMode", "creationMoment");
 		
 	}
 
@@ -56,9 +57,8 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		request.unbind(entity, model, "title", "itemCategory", "description", "price", "photo", "link", 
-				"specificationSheet.sections");
+	
+		request.unbind(entity, model, "ticker", "title", "itemCategory", "description", "price", "photo", "link");
 		
 	}
 
@@ -68,22 +68,25 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		Item result;
 		result = new Item();
 		Date moment;
-		
+	
+		Collection<RequestEntity> requests = new ArrayList<RequestEntity>();
 		Supplier supplier;
 		SpecificationSheet ss = new SpecificationSheet();
+		Collection<Section> sections = new ArrayList<Section>();
 		Section section = new Section();
-
+		
 		supplier = this.repository.findSupplierById(request.getPrincipal().getActiveRoleId());
 		result.setSupplier(supplier);
-
+		
 		moment = new Date(System.currentTimeMillis() - 1);
 		result.setCreationMoment(moment);
 		result.setStatus("DRAFT");
 		result.setFinalMode(false); 
+		result.setRequests(requests);
 		
-		
+		sections.add(section);
+		ss.setSections(sections);
 		result.setSpecificationSheet(ss);
-		ss.setSections(ss.getSections());
 		
 		return result;
 	}
@@ -94,6 +97,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		assert entity != null;
 		assert errors != null;
 		
+		System.out.println("Validate");
 		Collection<String> tickers = this.repository.findAllTickers();
 		String tickerUpdate = this.repository.findOneTickerById(request.getModel().getInteger("id"));
 		tickers.remove(tickerUpdate);
@@ -107,16 +111,16 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		if (!errors.hasErrors("ticker")) {
 			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "supplier.item.form.error.tickerRepetido");
 		}
-		
+		System.out.println("ticker repetidos");
 		//Section indexers in its specification sheet are unique
-		Collection<Section> sections = this.repository.findAllSections();
-		if(!errors.hasErrors("specificationSheet")) {
-			for(Section s: entity.getSpecificationSheet().getSections()) {	
-				errors.state(request,!sections.contains(s.getIndexer()),  "specificationSheet", "supplier.item.form.error.indexSectionNoUnico");
-			}
-			
-		}
-				
+//		Collection<Section> sections = this.repository.findAllSections();
+//		if(!errors.hasErrors("specificationSheet")) {
+//			for(Section s: entity.getSpecificationSheet().getSections()) {	
+//				errors.state(request,!sections.contains(s.getIndexer()),  "specificationSheet", "supplier.item.form.error.indexSectionNoUnico");
+//			}
+//			
+//		}
+		System.out.println("indexer unique");		
 		// Ticker incorrecto
 		if (!errors.hasErrors("ticker")) {
 			List<String> res = new ArrayList<>();
@@ -132,7 +136,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 
 			errors.state(request, result, "ticker", "supplier.item.form.error.tickerIncorrecto");
 		}
-
+		System.out.println("ticker");
 		// Spam título
 		if (!errors.hasErrors("title")) {
 
@@ -155,7 +159,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 			}
 
 		}
-
+		System.out.println("title");
 		// Spam descripción
 		if (!errors.hasErrors("description")) {
 
@@ -178,12 +182,12 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 			}
 
 		}
-
+		System.out.println("description");
 	}
 
 	@Override
 	public void create(Request<Item> request, Item entity) {
-		
+		System.out.println("create");
 		Date creationMoment;
 		creationMoment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(creationMoment);
@@ -191,14 +195,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		//Cuando se crea un item el estado esta en borrardor y no en modo final 
 		entity.setStatus("DRAFT");
 		entity.setFinalMode(false);
-		
-		SpecificationSheet ss = new SpecificationSheet();
-		Section section = new Section();
-		
-		entity.setSpecificationSheet(ss);
-		
-		this.sectionRepository.save(section);
-		this.specificationRepository.save(ss);
+	
 		this.repository.save(entity);
 		
 	}
