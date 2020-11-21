@@ -52,6 +52,7 @@ public class SupplierItemListMineService implements AbstractListService<Supplier
 				
 		LocalDate creationDate = LocalDate.of(creationYear, creationMonth, creationDay);
 				
+
 		long daysBetween = ChronoUnit.DAYS.between(creationDate, now);
 		if(daysBetween<=7) {
 			entity.setNewItem(true);

@@ -96,6 +96,7 @@ master.menu.supplier ########################################################
 master.menu.supplier = Distribuidor
 master.menu.supplier.list-item = Lista de Productos
 master.menu.supplier.list-request = List de Peticiones
+master.menu.supplier.create-item = Crear Producto
 
 master.menu.buyer ########################################################
 

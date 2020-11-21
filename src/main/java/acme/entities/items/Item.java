@@ -4,6 +4,7 @@ package acme.entities.items;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -68,16 +69,17 @@ public class Item extends DomainEntity {
 	@Pattern(regexp = "^(DRAFT|PUBLISHED)$")
 	private String						status;
 
+
 	// Derived attributes -----------------------------------------------------
 
 	private boolean						newItem;
 
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
 	@Valid
-	@OneToOne(optional = false)
-	private SpecificationSheet			specificationSheet;
+	@OneToOne(optional = false, cascade = CascadeType.ALL)
+	private SpecificationSheet	specificationSheet;
+
 
 	@NotNull
 	@Valid
@@ -90,7 +92,6 @@ public class Item extends DomainEntity {
 	//	private Collection<AuditRecord>	auditRecords;
 
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "item")
 	private Collection<RequestEntity>	requests;
 

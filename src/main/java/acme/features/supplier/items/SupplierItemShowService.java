@@ -1,14 +1,18 @@
 package acme.features.supplier.items;
 
+
+import java.util.Collection;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -67,8 +71,16 @@ public class SupplierItemShowService  implements AbstractShowService<Supplier, I
 			entity.setNewItem(true);
 		}
 
-		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link", "newItem");
-	}
+		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description",
+				"price", "photo", "link", "newItem");
+		Collection<RequestEntity> requests = this.repository.findRequestByItemId(entity.getId());
+		if(requests!= null && requests.size()>0) {
+			boolean hasRequests=true;
+			System.out.println("entra");
+			model.setAttribute("hasRequests", hasRequests);	
+		}
+}
+
 
 	@Override
 	public Item findOne(Request<Item> request) {

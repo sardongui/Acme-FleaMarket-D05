@@ -37,5 +37,4 @@ public interface AdministratorChartRepository extends AbstractRepository {
 
 	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 1 group by day(a.creation)")
 	Object[] findAcceptedRequestsLastThreeWeeks(Date d);
-
 }

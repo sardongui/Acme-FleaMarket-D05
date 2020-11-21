@@ -82,6 +82,7 @@
 		
 		<acme:menu-option code="master.menu.supplier" access="hasRole('Supplier')">
 			<acme:menu-suboption code="master.menu.supplier.list-item" action="/supplier/item/list-mine"/>
+			<acme:menu-suboption code="master.menu.supplier.create-item" action="/supplier/item/create"/>
 			<acme:menu-suboption code="master.menu.supplier.list-request" action="/supplier/request-entity/list-mine"/>
 		</acme:menu-option>
 

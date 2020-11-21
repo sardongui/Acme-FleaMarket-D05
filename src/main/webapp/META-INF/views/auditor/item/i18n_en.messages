@@ -17,3 +17,6 @@ auditor.audit-record.form.button.create = Create Audit Record
 auditor.audit-record.form.button.list = List of Audit Record
 auditor.audit-record.form.button.listNotMine = List of others Audit Record
 auditor.item.form.button.return=Return 
+
+supplier.item.form.button.update = Update
+supplier.item.form.button.create = Create
