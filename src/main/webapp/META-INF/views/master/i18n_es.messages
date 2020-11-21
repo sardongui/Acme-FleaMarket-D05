@@ -58,6 +58,7 @@ master.menu.authenticated.list-items = Lista de items
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.auditor.list-requests = Solicitudes registro auditores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.customisation = Customización
 master.menu.administrator.shutdown = Parar el sistema
@@ -100,7 +101,7 @@ master.menu.supplier.create-item = Crear Producto
 master.menu.buyer ########################################################
 
 master.menu.buyer = Comprador
-master.menu.buyer.list-request = Lista de peticiones
+master.menu.buyer.list-request = Lista de pedidos
 
 master.menu.sponsor ########################################################
 
@@ -136,6 +137,12 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.become-supplier = Hazte distribuidor
 master.menu.user-account.supplier = Datos de distribuidor
+master.menu.user-account.become-buyer = Hazte comprador
+master.menu.user-account.buyer = Datos comprador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor = Datos auditor
+master.menu.user-account.become-sponsor = Hazte patrocinador
+master.menu.user-account.sponsor = Datos patrocinador
 
 # master.footer ###############################################################
 

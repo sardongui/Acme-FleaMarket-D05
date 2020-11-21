@@ -6,11 +6,15 @@ authenticated.item.form.label.description = Descripción
 authenticated.item.form.label.itemCategory = Categoría
 authenticated.item.form.label.price= Precio
 authenticated.item.form.label.link= Link con Información Adicional
+authenticated.item.form.label.newItem = Nuevo Producto
 
 authenticated.item.list.label.creationMoment= Momento de creación
 authenticated.item.list.label.title= Título
+authenticated.item.list.label.newItem = Nuevo Producto
 
 authenticated.item.form.button.return= Atrás 
 
+authenticated.audit-record.form.button.list = Listar registro de auditorías
 authenticated.item.form.button.viewMessages = Ver foro
 authenticated.item.form.button.newMessage = Nuevo mensaje de foro
+authenticated.item.form.button.orderItem = Pedir producto

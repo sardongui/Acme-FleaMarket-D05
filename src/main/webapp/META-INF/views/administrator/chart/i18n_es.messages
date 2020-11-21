@@ -4,3 +4,10 @@ administrator.chart.form.label.ratioOfWarningNewsVersusRestOfit = Ratio de noved
 administrator.chart.form.label.numberOfAdvertisementsGroupedByDiscount = Anuncios agrupados por descuento
 administrator.chart.form.label.ratioOfItemsGroupedByItemCategory = Ratio de productos agrupados por categoría del producto
 administrator.chart.form.label.ratioOfSponsorsGroupedByCreditCard = Ratio de patrocinadores agrupados por estado de la tarjeta de crédito
+administrator.chart.form.label.RequestsByStatus = Peticiones agrupadas por estado:
+
+administrator.chart.form.label.TimeSeriesRequests = Peticiones los últimos 15 días
+
+administrator.chart.form.label.AcceptedRequests = Peticiones aceptadas
+administrator.chart.form.label.PendingRequests = Peticiones pendientes
+administrator.chart.form.label.RejectedRequests = Peticiones rechazadas

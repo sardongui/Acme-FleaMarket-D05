@@ -16,7 +16,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
-	
+
 	<!-- DonaireBulletin -->
 	<bean id="DonaireBulletin01" class="acme.entities.bulletins.DonaireBulletin">
 		<property name="author" value="Carlos Ruiz Zafón"/>
@@ -352,6 +352,13 @@
 		<property name="photo" value="https://www.section03.com"/>
 	
 	</bean>
+	<bean id="section4" class="acme.entities.sections.Section">
+		<property name="indexer" value="4"/>
+		<property name="title" value="section04"/>
+		<property name="description" value="section04"/>
+		<property name="photo" value="https://www.section04.com"/>
+	
+	</bean>
 	
 	
 	<!-- Specification Sheet -->
@@ -372,6 +379,15 @@
 			</list>
 		</property>
 	</bean>
+	
+	<bean id="specificationSheet3" class="acme.entities.specificationSheets.SpecificationSheet">
+		<property name="sections">
+			<list>
+				<ref bean="section4" />
+			</list>
+		</property>
+	</bean>
+	
 	
 	
 	
@@ -399,6 +415,7 @@
 	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
 		<property name="firm" value="Auditor firm" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement"/>
+		<property name="accepted" value="true"/>
 		<property name="userAccount" ref="auditor1UserAccount" />
 		<property name="auditRecords">
 			<list>
@@ -435,6 +452,7 @@
 	<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
 		<property name="firm" value="Auditor firm 2" />
 		<property name="responsibilityStatement" value="Auditor responsibility statement 2"/>
+		<property name="accepted" value="true"/>
 		<property name="userAccount" ref="auditor2UserAccount" />
 		<property name="auditRecords">
 			<list>
@@ -498,6 +516,7 @@
 		<property name="price" value="2.56€"/>
 		<property name="photo" value="https://www.item01.com"/>
 		<property name="link" value="https://www.item01.com"/>
+		<property name="finalMode" value="true"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
 		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">
@@ -516,11 +535,29 @@
 		<property name="price" value="650€"/>
 		<property name="photo" value="https://www.item02.com"/>
 		<property name="link" value="https://www.item02.com"/>
+		<property name="finalMode" value="true"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
 		<property name="supplier" ref="supplier2Supplier"/>
 		<property name="requests">
 			<list>
 				<ref bean="request2" />
+			</list>
+		</property>
+	</bean>
+	<bean id="item3" class="acme.entities.items.Item">
+		<property name="ticker" value="ALI-20-123123"/>
+		<property name="creationMoment" value="2020/11/14 19:47"/>
+		<property name="title" value="Tomates"/>
+		<property name="itemCategory" value="Alimentación"/>
+		<property name="description" value="Descripcion 03"/>
+		<property name="price" value="1€"/>
+		<property name="photo" value="https://www.item03.com"/>
+		<property name="link" value="https://www.item03.com"/>
+		<property name="specificationSheet" ref="specificationSheet3" />
+		<property name="supplier" ref="supplier1Supplier"/>
+		<property name="requests">
+			<list>
+				<ref bean="request3" />
 			</list>
 		</property>
 	</bean>
@@ -607,6 +644,8 @@
 		<property name="quantity" value="2.0"/>
 		<property name="item" ref="item1" />
 		<property name="buyer" ref="buyer1Buyer" />
+		<property name="status" value="PENDING" />
+  		<property name="rejectionJustification" value="" />
 	</bean>
 	
 	<bean id="request2" class="acme.entities.requests.RequestEntity">
@@ -615,22 +654,36 @@
 		<property name="quantity" value="1.0"/>
 		<property name="item" ref="item2" />
 		<property name="buyer" ref="buyer1Buyer" />
+		<property name="status" value="REJECTED" />
+  		<property name="rejectionJustification" value="Example justification" />
+	</bean>
+	
+	<bean id="request3" class="acme.entities.requests.RequestEntity">
+		<property name="ticker" value="ALI-20-123123"/>
+		<property name="creation" value="2020/11/14 12:50"/>
+		<property name="quantity" value="1.0"/>
+		<property name="item" ref="item3" />
+		<property name="buyer" ref="buyer1Buyer" />
+		<property name="status" value="ACCEPTED" />
+  		<property name="rejectionJustification" value="" />
 	</bean>
 	
 	<!-- Messages -->
 	<bean id="message1" class="acme.entities.messages.Message">
-		<property name="title" value="Poca salida"/>
+		<property name="title" value="Me gusta"/>
 		<property name="creation" value="2020/11/08 16:40"/>
-		<property name="tags" value="advertencia"/>
-		<property name="body" value="Este producto no tiene la salida que esperábamos."/>
+		<property name="tags" value="positivo"/>
+		<property name="body" value="Me gusta este producto."/>
+		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum1" />
 	</bean>
 	
 	<bean id="message2" class="acme.entities.messages.Message">
 		<property name="title" value="Buena venta"/>
 		<property name="creation" value="2020/11/06 11:23"/>
-		<property name="tags" value="acierto, critica"/>
-		<property name="body" value="Parece que este producto esta teniendo bastante salida, deberíamos disponer de un stock alto."/>
+		<property name="tags" value="acierto,critica"/>
+		<property name="body" value="Buena calidad."/>
+		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum1" />
 	</bean>
 	
@@ -639,9 +692,17 @@
 		<property name="creation" value="2020/11/06 11:50"/>
 		<property name="tags" value="ejemplo"/>
 		<property name="body" value="Otro ejemplo"/>
+		<property name="confirmed" value="true" />
 		<property name="forum" ref="forum2" />
 	</bean>
 	
+	<bean id="message4" class="acme.entities.messages.Message">
+		<property name="title" value="Ejemplo"/>
+		<property name="creation" value="2020/11/16 11:50"/>
+		<property name="tags" value="ejemplo"/>
+		<property name="body" value="Otro ejemplo"/>
+		<property name="forum" ref="forum3" />
+	</bean>
 	<!-- Forums -->
 	<bean id="forum1" class="acme.entities.forums.Forum">
 		<property name="item" ref="item1" />
@@ -649,6 +710,10 @@
 	
 	<bean id="forum2" class="acme.entities.forums.Forum">
 		<property name="item" ref="item2" />
+	</bean>
+	
+	<bean id="forum3" class="acme.entities.forums.Forum">
+		<property name="item" ref="item3" />
 	</bean>
 	
 	<!-- Sponsor -->
@@ -740,7 +805,7 @@
 	</bean>
 
 	<bean name="sponsor3Sponsor" class="acme.entities.roles.Sponsor">
-		<property name="firmName" value="Gigabyte" />
+		<property name="firmName" value="Razer" />
 		<property name="creditCard" ref="creditCard02" />
 		<property name="userAccount" ref="sponsor3UserAccount" />
 		<property name="banners">
@@ -774,7 +839,7 @@
 	</bean>
 
 	<bean name="sponsor4Sponsor" class="acme.entities.roles.Sponsor">
-		<property name="firmName" value="Gigabyte" />
+		<property name="firmName" value="Versus" />
 		<property name="userAccount" ref="sponsor4UserAccount" />
 		<property name="banners">
 			<list>

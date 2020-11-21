@@ -1,0 +1,22 @@
+
+authenticated.sponsor.form.label.firmName = Compañía
+
+authenticated.sponsor.creditCard.form.label.holderName = Nombre propietario
+authenticated.sponsor.creditCard.form.label.number = Número
+authenticated.sponsor.creditCard.form.label.brand = Marca
+authenticated.sponsor.creditCard.form.label.month = Mes expiración
+authenticated.sponsor.creditCard.form.label.year = Año expiración
+authenticated.sponsor.creditCard.form.label.cvv = CVV
+
+authenticated.sponsor.creditCard.form.legend.creditCard = Tarjeta de crédito vinculada (En caso de no usarse, dejar campos en blanco)
+authenticated.sponsor.creditCard.form.legend.creditCard.used = Tarjeta de crédito vinculada
+
+authenticated.sponsor.form.button.create = Crear sponsor
+authenticated.sponsor.form.button.update = Actualizar sponsor
+authenticated.sponsor.form.button.deleteCC = Borrar tarjeta de crédito
+
+authenticated.sponsor.form.button.return = Volver
+
+creditCard.error.cvv = El CVV debe tener 3 o 4 dígitos
+creditCard.error.year = El año debe tener 4 dígitos
+creditCard.error.month = Debe estar entre 1 y 12

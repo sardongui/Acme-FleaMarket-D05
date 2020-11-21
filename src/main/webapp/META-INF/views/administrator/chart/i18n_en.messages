@@ -4,3 +4,10 @@ administrator.chart.form.label.ratioOfWarningNewsVersusRestOfit = Ratio of warni
 administrator.chart.form.label.numberOfAdvertisementsGroupedByDiscount = Number of advertisements grouped by discount
 administrator.chart.form.label.ratioOfItemsGroupedByItemCategory = Ratio of items grouped by item category
 administrator.chart.form.label.ratioOfSponsorsGroupedByCreditCard= Ratio of sponsors whose a credit card that has expired, versus sponsors whose credit card is not expired, versus sponsors that have not registered any credit cards 
+administrator.chart.form.label.RequestsByStatus = Requests grouped by status:
+
+administrator.chart.form.label.TimeSeriesRequests = Series requests during the last 15 days
+
+administrator.chart.form.label.AcceptedRequests = Accepted requests
+administrator.chart.form.label.PendingRequests = Pending requests
+administrator.chart.form.label.RejectedRequests = Rejected requests

@@ -32,23 +32,25 @@ public class Auditor extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	private String				firm;
+	private String					firm;
 
 	@NotBlank
-	private String				responsibilityStatement;
+	private String					responsibilityStatement;
+
+	private boolean					accepted;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	
+
 	@NotNull
 	@Valid
-	@OneToMany(mappedBy="auditor")
-	private Collection<AuditRecord> auditRecords;
+	@OneToMany(mappedBy = "auditor")
+	private Collection<AuditRecord>	auditRecords;
 
 }

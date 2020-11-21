@@ -6,11 +6,14 @@ auditor.item.form.label.photo = Fotografía
 auditor.item.form.label.itemCategory = Categoría
 auditor.item.form.label.price= Precio
 auditor.item.form.label.link = Link Información Adicional
+auditor.item.form.label.newItem = Nuevo Producto
 
 auditor.item.list.label.creationMoment=Momento de creación
 auditor.item.list.label.title=Título
 auditor.item.list.label.auditor = Auditor
+auditor.item.list.label.newItem = Nuevo Producto
 
+auditor.audit-record.form.button.create = Crear registro de auditoría
 auditor.audit-record.form.button.list= Lista de mis registros de auditoría
 auditor.audit-record.form.button.listNotMine = Lista de otros registros de auditoría
 auditor.item.form.button.return=Atrás 

@@ -1,0 +1,13 @@
+authenticated.audit-record.form.label.creationMoment = Momento de creación
+authenticated.audit-record.form.label.title = Título
+authenticated.audit-record.form.label.body = Cuerpo
+authenticated.audit-record.form.label.status = Estado
+authenticated.audit-record.form.label.finalMode = Modo Final
+authenticated.audit-record.form.label.finalMode.final = Final
+authenticated.audit-record.form.label.finalMode.draft = Borrador 
+
+authenticated.audit-record.list.label.creationMoment=Momento de creación
+authenticated.audit-record.list.label.title=Título
+authenticated.audit-record.list.label.item = Producto
+
+authenticated.audit-record.form.button.return=Atrás 

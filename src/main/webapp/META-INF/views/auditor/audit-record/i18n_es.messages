@@ -2,9 +2,14 @@ auditor.audit-record.form.label.creationMoment = Momento de creación
 auditor.audit-record.form.label.title = Título
 auditor.audit-record.form.label.body = Cuerpo
 auditor.audit-record.form.label.status = Estado
+auditor.audit-record.form.label.finalMode = Modo Final
+auditor.audit-record.form.label.finalMode.final = Final
+auditor.audit-record.form.label.finalMode.draft = Borrador 
 
 auditor.audit-record.list.label.creationMoment=Momento de creación
 auditor.audit-record.list.label.title=Título
 auditor.audit-record.list.label.item = Producto
 
+auditor.audit-record.form.button.create = Crear
+auditor.audit-record.form.button.update = Actualizar
 auditor.audit-record.form.button.return=Atrás 

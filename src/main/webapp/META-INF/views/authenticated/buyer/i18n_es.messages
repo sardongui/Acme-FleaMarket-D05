@@ -1,0 +1,33 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.buyer.form.title.create = Hazte comprador
+authenticated.buyer.form.title.update = Actualiza tus datos de comprador
+
+authenticated.buyer.form.label.email = Email
+authenticated.buyer.form.label.phone = Teléfono
+authenticated.buyer.form.label.deliveryAddress = Dirección de envío
+
+authenticated.buyer.creditCard.form.label.holderName = Nombre propietario
+authenticated.buyer.creditCard.form.label.number = Número
+authenticated.buyer.creditCard.form.label.brand = Marca
+authenticated.buyer.creditCard.form.label.month = Mes expiración
+authenticated.buyer.creditCard.form.label.year = Año expiración
+authenticated.buyer.creditCard.form.label.cvv = CVV
+
+authenticated.buyer.creditCard.form.legend.creditCard = Tarjeta de crédito vinculada
+
+authenticated.buyer.form.button.create = Registrar
+authenticated.buyer.form.button.update = Actualizar
+authenticated.buyer.form.button.return = Volver
+
+buyer.error.phone = Debe encajar en el patrón: +CC TLF ó TLF
+creditCard.error.cvv = El CVV debe tener 3 o 4 dígitos
+creditCard.error.year = El año debe tener 4 dígitos

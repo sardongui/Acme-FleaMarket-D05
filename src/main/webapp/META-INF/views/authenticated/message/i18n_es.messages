@@ -2,9 +2,13 @@ authenticated.message.form.label.creation = Momento de creación
 authenticated.message.form.label.title = Título
 authenticated.message.form.label.body = Mensaje
 authenticated.message.form.label.tags = Tags
+authenticated.message.form.label.isConfirmed = Una vez creado el mensaje, este no se puede actualizar o borrar. Confirme que desea continuar
 
 authenticated.message.list.label.creation= Momento de creación
 authenticated.message.list.label.title= Título
 
 authenticated.message.form.button.return= Atrás 
 authenticated.message.form.button.create= Crear
+
+authenticated.message.error.notConfirmed = Debe confirmar que leyó la advertencia para poder continuar
+authenticated.message.error.spam = No se permite el spam

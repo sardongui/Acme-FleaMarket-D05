@@ -26,12 +26,15 @@ public interface AdministratorChartRepository extends AbstractRepository {
 	@Query("select count(s), (select count(ss) from Sponsor ss where ss.creditCard.expired='false'), (select count(sss) from Sponsor sss where sss.creditCard.expired='true') from Sponsor s where s.creditCard is null")
 	Object[] findSponsorByCreditCard();
 	
-//	@Query("select date(r.moment),count(r) FROM RequestEntity r where r.moment > ?1 and r.statement = 0 group by day(r.creation)")
-//	Object[] findRejectedRequestsLastThreeWeeks(Date d);
-//
-//	@Query("select date(r.moment),count(r) FROM RequestEntity r where r.moment > ?1 and r.statement = 1 group by day(r.creation)")
-//	Object[] findPendingRequestsLastThreeWeeks(Date d);
-//
-//	@Query("select date(r.moment),count(r) FROM RequestEntity a where r.moment > ?1 and r.statement = 2 group by day(r.creation)")
-//	Object[] findAcceptedRequestsLastThreeWeeks(Date d);
+	@Query("select a.status,count(a) FROM RequestEntity a group by a.status order by a.status")
+	Object[] findRequestStatus();
+	
+	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 2 group by day(a.creation)")
+	Object[] findRejectedRequestsLastThreeWeeks(Date d);
+
+	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 0 group by day(a.creation)")
+	Object[] findPendingRequestsLastThreeWeeks(Date d);
+
+	@Query("select date(a.creation),count(a) FROM RequestEntity a where a.creation > ?1 and a.status = 1 group by day(a.creation)")
+	Object[] findAcceptedRequestsLastThreeWeeks(Date d);
 }

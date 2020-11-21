@@ -1,0 +1,8 @@
+
+authenticated.auditor.form.label.firm = Firm
+authenticated.auditor.form.label.responsibilityStatement = Responsibility statements
+
+authenticated.auditor.form.button.create = Create auditor
+authenticated.auditor.form.button.update = Update auditor
+
+authenticated.auditor.form.button.return = Back

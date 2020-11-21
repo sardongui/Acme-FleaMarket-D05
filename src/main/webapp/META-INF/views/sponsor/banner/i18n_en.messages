@@ -2,7 +2,8 @@ sponsor.banner.form.label.picture = Picture
 sponsor.banner.form.label.slogan = Slogan
 sponsor.banner.form.label.target = URL
 
-sponsor.banner.creditCard.form.legend.creditCard = Linked credit card
+sponsor.banner.creditCard.form.legend.creditCard = Linked credit card (If not used, leave fields blank)
+sponsor.banner.creditCard.form.legend.creditCard.used = Linked credit card
 sponsor.banner.creditCard.form.label.holderName = Holder name
 sponsor.banner.creditCard.form.label.number = Number
 sponsor.banner.creditCard.form.label.brand = Brand
@@ -10,7 +11,7 @@ sponsor.banner.creditCard.form.label.month = Expiration month
 sponsor.banner.creditCard.form.label.year = Expiration year
 sponsor.banner.creditCard.form.label.cvv = CVV
 
-sponsor.banner.form.button.addCreditCard = Add credit card
+sponsor.banner.form.button.linkCreditCard = Link credit card
 sponsor.banner.form.button.showCreditCard = Show credit card
 sponsor.banner.form.button.update = Update
 sponsor.banner.form.button.delete = Delete
@@ -20,3 +21,9 @@ sponsor.banner.form.button.return = Return
 
 sponsor.banner.list.label.picture = Picture
 sponsor.banner.list.label.slogan = Slogan
+
+sponsor.banner.error.spam = No spamming allowed
+sponsor.banner.error.noFoundCreditCard = No profile credit card detected
+sponsor.banner.error.foundCreditCard = Profile credit card detected
+sponsor.banner.error.expiredCreditCard = The detected profile credit card has expired. Please register a valid credit card in your profile settings
+sponsor.banner.error.creditCardLinked = Your profile credit card is already linked to a banner. Unlink it in order to use it

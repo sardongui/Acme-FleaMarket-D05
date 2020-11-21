@@ -33,41 +33,42 @@ import lombok.Setter;
 @Setter
 public class Item extends DomainEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long			serialVersionUID	= 1L;
 
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{supplier.item.ticker.pattern}")
-	private String				ticker;
+	private String						ticker;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date				creationMoment;
+	private Date						creationMoment;
 
 	@NotBlank
-	private String				title;
+	private String						title;
 
 	@NotBlank
-	private String				itemCategory;
+	private String						itemCategory;
 
 	@NotBlank
-	private String				description;
+	private String						description;
 
 	@Valid
 	@NotNull
-	private Money				price;
+	private Money						price;
 
 	@URL
-	private String				photo;
+	private String						photo;
 
 	@URL
-	private String				link;
-	
-	private boolean				finalMode;
+	private String						link;
+
+	private boolean						finalMode;
 
 	@Pattern(regexp = "^(DRAFT|PUBLISHED)$")
-	private String				status;
+	private String						status;
+
 
 	// Derived attributes -----------------------------------------------------
 
@@ -79,19 +80,19 @@ public class Item extends DomainEntity {
 	@OneToOne(optional = false, cascade = CascadeType.ALL)
 	private SpecificationSheet	specificationSheet;
 
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Supplier			supplier;
+	private Supplier					supplier;
 
-//	@NotNull
-//	@Valid
-//	@OneToMany(mappedBy="item")
-//	private Collection<AuditRecord>	auditRecords;
+	//	@NotNull
+	//	@Valid
+	//	@OneToMany(mappedBy="item")
+	//	private Collection<AuditRecord>	auditRecords;
 
 	@Valid
 	@OneToMany(mappedBy = "item")
 	private Collection<RequestEntity>	requests;
-
 
 }

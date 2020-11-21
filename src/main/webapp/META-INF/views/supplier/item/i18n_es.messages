@@ -6,10 +6,13 @@ supplier.item.form.label.description = Descripción
 supplier.item.form.label.itemCategory = Categoría
 supplier.item.form.label.price= Precio
 supplier.item.form.label.link= Link con Información Adicional
+
 supplier.item.form.label.sectionTitle = Hoja de especificaciones
+supplier.item.form.label.newItem = Nuevo Producto
 
 supplier.item.list.label.creationMoment=Momento de creación
 supplier.item.list.label.title=Título
+upplier.item.list.label.newItem= Nuevo Producto
 
 supplier.item.form.button.update = Actualizar
 supplier.item.form.button.create = Crear

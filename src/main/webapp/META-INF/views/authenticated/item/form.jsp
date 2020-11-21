@@ -12,6 +12,7 @@
 	<acme:form-textbox code="authenticated.item.form.label.itemCategory" path="itemCategory"/>
 	<acme:form-money code="authenticated.item.form.label.price" path="price"/>
 	<acme:form-url code="authenticated.item.form.label.link" path="link"/>
+	<acme:form-textbox code="authenticated.item.form.label.newItem" path="newItem"/>
 	
 	<jstl:if test="${command == 'show'}" >
 			
@@ -24,7 +25,19 @@
 			code="authenticated.item.form.button.newMessage" 
 			action="/authenticated/message/create?item=${item}&forum=${forum}"/>
 			
+			<jstl:if test="${isFinalMode}" >
+				<acme:check-access test="hasRole('Buyer')">
+					<acme:form-submit method="get"
+					code="authenticated.item.form.button.orderItem" 
+					action="/buyer/request-entity/create?item=${item}"/>
+				</acme:check-access>
+			</jstl:if>
+			<acme:form-submit method="get" code="authenticated.audit-record.form.button.list"
+	 	action="/authenticated/audit-record/list?item=${item}"/>
+			
 	</jstl:if>
+	
+	<input id="item" name="item" value="${item}" type="hidden" />
 	
 	<acme:form-return code="authenticated.item.form.button.return"/>
 </acme:form>

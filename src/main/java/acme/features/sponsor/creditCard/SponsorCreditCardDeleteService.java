@@ -11,7 +11,6 @@ import acme.features.sponsor.banner.SponsorBannerRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -80,12 +79,6 @@ public class SponsorCreditCardDeleteService implements AbstractDeleteService<Spo
 		Integer id = request.getModel().getInteger("banner");
 		Banner banner = this.bannerRepository.findOneById(id);
 		banner.setCreditCard(null);
-
-		Principal principal = request.getPrincipal();
-		Sponsor sponsor = this.bannerRepository.findSponsorById(principal.getActiveRoleId());
-		sponsor.setCreditCard(null);
-
-		this.repository.delete(entity);
 
 	}
 

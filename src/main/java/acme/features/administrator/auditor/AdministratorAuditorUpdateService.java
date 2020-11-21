@@ -1,33 +1,33 @@
 
-package acme.features.sponsor.creditCard;
+package acme.features.administrator.auditor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.creditCards.CreditCard;
-import acme.entities.roles.Sponsor;
+import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class SponsorCreditCardUpdateService implements AbstractUpdateService<Sponsor, CreditCard> {
+public class AdministratorAuditorUpdateService implements AbstractUpdateService<Administrator, Auditor> {
 
 	// Internal state ------------------------------------------------------------------
 	@Autowired
-	SponsorCreditCardRepository repository;
+	AdministratorAuditorRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<CreditCard> request) {
+	public boolean authorise(final Request<Auditor> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void bind(final Request<CreditCard> request, final CreditCard entity, final Errors errors) {
+	public void bind(final Request<Auditor> request, final Auditor entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -36,20 +36,20 @@ public class SponsorCreditCardUpdateService implements AbstractUpdateService<Spo
 	}
 
 	@Override
-	public void unbind(final Request<CreditCard> request, final CreditCard entity, final Model model) {
+	public void unbind(final Request<Auditor> request, final Auditor entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "holderName", "number", "brand", "month", "year", "cvv");
+		request.unbind(entity, model, "firm", "responsibilityStatement");
 
 	}
 
 	@Override
-	public CreditCard findOne(final Request<CreditCard> request) {
+	public Auditor findOne(final Request<Auditor> request) {
 		assert request != null;
 
-		CreditCard result;
+		Auditor result;
 		int id;
 
 		id = request.getModel().getInteger("id");
@@ -59,17 +59,18 @@ public class SponsorCreditCardUpdateService implements AbstractUpdateService<Spo
 	}
 
 	@Override
-	public void validate(final Request<CreditCard> request, final CreditCard entity, final Errors errors) {
+	public void validate(final Request<Auditor> request, final Auditor entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 	}
 
 	@Override
-	public void update(final Request<CreditCard> request, final CreditCard entity) {
+	public void update(final Request<Auditor> request, final Auditor entity) {
 		assert request != null;
 		assert entity != null;
+
+		entity.setAccepted(true);
 
 		this.repository.save(entity);
 

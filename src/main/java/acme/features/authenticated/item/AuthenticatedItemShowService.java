@@ -1,6 +1,11 @@
 
 package acme.features.authenticated.item;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,12 +38,36 @@ public class AuthenticatedItemShowService implements AbstractShowService<Authent
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
+		//Fecha actual
+		Calendar today = Calendar.getInstance();
+		int todayYear = today.get(Calendar.YEAR);
+		int todayMonth = today.get(Calendar.MONTH);
+		int todayDay = today.get(Calendar.DAY_OF_MONTH);
+
+		LocalDate now = LocalDate.of(todayYear, todayMonth, todayDay);
+
+		//Fecha creacion
+		Calendar creation = new GregorianCalendar();
+		creation.setTime(entity.getCreationMoment());
+		int creationYear = creation.get(Calendar.YEAR);
+		int creationMonth = creation.get(Calendar.MONTH);
+		int creationDay = creation.get(Calendar.DAY_OF_MONTH);
+
+		LocalDate creationDate = LocalDate.of(creationYear, creationMonth, creationDay);
+
+		long daysBetween = ChronoUnit.DAYS.between(creationDate, now);
+		if (daysBetween <= 7) {
+			entity.setNewItem(true);
+		}
+
+		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link", "newItem");
 		model.setAttribute("item", entity.getId());
 
 		Integer forum = this.messageRepository.findForumByItemId(entity.getId()).getId();
 		model.setAttribute("forum", forum);
 		request.setModel(model);
+
+		model.setAttribute("isFinalMode", entity.isFinalMode());
 
 	}
 
