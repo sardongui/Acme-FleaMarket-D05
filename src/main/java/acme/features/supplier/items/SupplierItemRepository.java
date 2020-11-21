@@ -42,4 +42,7 @@ public interface SupplierItemRepository extends AbstractRepository{
 
 	@Query("select i.specificationSheet.sections from Item i where i.id=?1")
 	Collection<Section> findAllSections();
+
+	@Query("select i from Item i")
+	Collection<Item> findMany();
 }

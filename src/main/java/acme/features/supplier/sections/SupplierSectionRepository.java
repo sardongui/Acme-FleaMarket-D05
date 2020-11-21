@@ -19,4 +19,7 @@ public interface SupplierSectionRepository extends AbstractRepository{
 	@Query("select i.specificationSheet from Item i where i.specificationSheet.id=?1")
 	SpecificationSheet findSpecificationById(Integer specificationSheetId);
 
+	@Query("select r from Section r")
+	Collection<Section> findMany();
+
 }

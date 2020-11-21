@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.customisations.Customisation;
 import acme.entities.items.Item;
+import acme.entities.requests.RequestEntity;
 import acme.entities.roles.Supplier;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -34,7 +35,7 @@ public class SupplierItemUpdateService implements AbstractUpdateService<Supplier
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "creationMoment");
+		request.bind(entity, errors, "ticker", "creationMoment");
 		
 	}
 
@@ -44,8 +45,13 @@ public class SupplierItemUpdateService implements AbstractUpdateService<Supplier
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title","ticker", "itemCategory", "description", "price", "photo", "link");
-		
+		request.unbind(entity, model, "title", "itemCategory", "description", "price", "photo", "link");
+		Collection<RequestEntity> requests = this.repository.findRequestByItemId(entity.getId());
+		if(requests!= null && requests.size()>0) {
+			boolean hasRequests=true;
+			System.out.println("entra");
+			model.setAttribute("hasRequests", hasRequests);	
+		}
 	}
 
 	@Override

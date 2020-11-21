@@ -65,8 +65,7 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");
-		
+		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link");	
 	}
 
 	@Override
@@ -86,28 +85,14 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-
-//		if(!errors.hasErrors("requests")) {
-//			errors.state(request, (!entity.getRequests().isEmpty()), "requests", "supplier.item.form.error.hasRequests");
-//			
-//		}
+			
 	}
 
 	@Override
 	public void delete(Request<Item> request, Item entity) {
 		assert request != null;
 		assert entity != null;
-			
-		Collection<RequestEntity> r = this.repository.findRequestByItemId(entity.getId());
-		if(!r.isEmpty()) {
-			for(RequestEntity re: r) {
-				re.setBuyer(null);
-				re.setItem(null);
-				this.requestRepository.delete(re);
-			}
-		}
-		
+	
 		Collection<AuditRecord> ar = this.auditRecordRepository.findManyByItemId(entity.getId());
 		if(!ar.isEmpty()) {
 			for(AuditRecord audit: ar) {
@@ -118,6 +103,7 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 		}
 		
 		Forum forum = this.forumRepository.findForumByItemId(entity.getId());
+		if(forum!=null) {
 		Collection<Message> messages = this.messageRepository.findMany(entity.getId());
 			for(Message m: messages) {
 				m.setForum(null);
@@ -125,7 +111,7 @@ public class SupplierItemDeleteService implements AbstractDeleteService<Supplier
 			}
 		forum.setItem(null);	
 		this.forumRepository.delete(forum);
-		
+		}
 		SpecificationSheet ss = this.repository.findSpecificationSheetById(entity.getId());
 		
 		this.repository.delete(entity);

@@ -42,7 +42,8 @@ public class AdministratorFigmentCreateService implements AbstractCreateService<
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
+
+
 		request.unbind(entity, model, "title", "nameInventor", "description","creationMoment", "minMoney", "maxMoney");
 		
 	}
@@ -52,6 +53,8 @@ public class AdministratorFigmentCreateService implements AbstractCreateService<
 		Figment result = new Figment();
 		Date moment = new Date(System.currentTimeMillis() - 1);
 		result.setCreationMoment(moment);
+
+
 		return result;
 	}
 
@@ -81,7 +84,8 @@ public class AdministratorFigmentCreateService implements AbstractCreateService<
 			isMinMoneyLowerThanMaxMoney = minMoney < maxMoney;
 			errors.state(request, isMinMoneyLowerThanMaxMoney, "minMoney", "administrator.figment.error.minMoneyLower");
 		}
-		
+
+
 	}
 
 	@Override
