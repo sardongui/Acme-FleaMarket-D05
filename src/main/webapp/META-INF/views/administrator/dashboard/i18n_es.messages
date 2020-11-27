@@ -1,8 +1,9 @@
-administrator.dashboard.form.label.numberNews = Noticias
-administrator.dashboard.form.label.numberMaterialSheets = Hoja de materiales
-administrator.dashboard.form.label.numberToolSheets = Hojas de herramientas
-administrator.dashboard.form.label.numberSuggestions = Sugerencias
-administrator.dashboard.form.label.numberFigments = Productos
+administrator.dashboard.form.label.numberNews = Número de Noticias
+administrator.dashboard.form.label.numberMaterialSheets = Número de Hojas de materiales
+administrator.dashboard.form.label.numberToolSheets = Número de Hojas de herramientas
+administrator.dashboard.form.label.numberSuggestions = Número de Sugerencias
+administrator.dashboard.form.label.numberFigments =Número de Productos
+administrator.dashboard.form.label.numberAdvertisement= Número de Anuncios Activos
 administrator.dashboard.form.label.minDiscountAdvertisements = Mínimo volumen de descuentos en anuncios
 administrator.dashboard.form.label.maxDiscountAdvertisements = Máximo volumen de descuentos en anuncios
 administrator.dashboard.form.label.averageDiscountAdvertisements = Media del volumen Pequeño de descuentos en anuncios
