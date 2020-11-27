@@ -6,6 +6,10 @@ supplier.item.form.label.description = Descripción
 supplier.item.form.label.itemCategory = Categoría
 supplier.item.form.label.price= Precio
 supplier.item.form.label.link= Link con Información Adicional
+supplier.item.form.label.status =Estado
+supplier.item.form.label.finalMode= Modo final
+supplier.item.form.label.finalMode.final= Final
+supplier.item.form.label.finalMode.draft= Borrador
 
 supplier.item.form.label.sectionTitle = Hoja de especificaciones
 supplier.item.form.label.newItem = Nuevo Producto

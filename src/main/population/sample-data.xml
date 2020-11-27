@@ -517,6 +517,7 @@
 		<property name="photo" value="https://www.item01.com"/>
 		<property name="link" value="https://www.item01.com"/>
 		<property name="finalMode" value="true"/>
+		<property name="status" value="PUBLISHED"/>
 		<property name="specificationSheet" ref="specificationSheet1"/>
 		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">
@@ -536,6 +537,7 @@
 		<property name="photo" value="https://www.item02.com"/>
 		<property name="link" value="https://www.item02.com"/>
 		<property name="finalMode" value="true"/>
+		<property name="status" value="PUBLISHED"/>
 		<property name="specificationSheet" ref="specificationSheet2" />
 		<property name="supplier" ref="supplier2Supplier"/>
 		<property name="requests">
@@ -553,6 +555,8 @@
 		<property name="price" value="1€"/>
 		<property name="photo" value="https://www.item03.com"/>
 		<property name="link" value="https://www.item03.com"/>
+		<property name="finalMode" value="false"/>
+		<property name="status" value="DRAFT"/>
 		<property name="specificationSheet" ref="specificationSheet3" />
 		<property name="supplier" ref="supplier1Supplier"/>
 		<property name="requests">

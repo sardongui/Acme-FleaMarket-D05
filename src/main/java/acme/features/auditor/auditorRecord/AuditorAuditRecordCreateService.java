@@ -59,7 +59,7 @@ public class AuditorAuditRecordCreateService  implements AbstractCreateService<A
 		 
 		principal = request.getPrincipal();
 		id=principal.getActiveRoleId();
-		auditor = this.repository.findOneAuditorById(id);
+		auditor = this.repository.findAuditorById(id);
 		result.setAuditor(auditor);
 		
 		itemId = request.getModel().getInteger("item");

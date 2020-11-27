@@ -72,11 +72,10 @@ public class SupplierItemShowService  implements AbstractShowService<Supplier, I
 		}
 
 		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description",
-				"price", "photo", "link", "newItem");
+				"price", "photo", "link", "newItem", "status", "finalMode");
 		Collection<RequestEntity> requests = this.repository.findRequestByItemId(entity.getId());
 		if(requests!= null && requests.size()>0) {
 			boolean hasRequests=true;
-			System.out.println("entra");
 			model.setAttribute("hasRequests", hasRequests);	
 		}
 }

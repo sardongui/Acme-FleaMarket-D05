@@ -16,3 +16,4 @@ supplier.request.list.label.ticker=Ticker
 supplier.request.form.button.update = Update
 supplier.request.form.button.return=Return 
 
+supplier.request.form.error.rejectionJustification = This field is required

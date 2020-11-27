@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
 import acme.entities.roles.Auditor;
-import acme.features.authenticated.auditor.AuthenticatedAuditorRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -24,18 +23,10 @@ public class AuditorItemListNotMineService implements AbstractListService<Audito
 	@Autowired
 	AuditorItemRepository					repository;
 
-	@Autowired
-	private AuthenticatedAuditorRepository	auditorRepository;
-
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-
-		Principal principal = request.getPrincipal();
-		Auditor auditor = this.auditorRepository.findOneAuditorByUserAccountId(principal.getAccountId());
-
-		assert auditor.isAccepted();
 
 		return true;
 	}

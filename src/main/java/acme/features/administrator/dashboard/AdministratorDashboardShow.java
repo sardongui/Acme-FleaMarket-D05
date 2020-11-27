@@ -34,7 +34,7 @@ public class AdministratorDashboardShow implements AbstractShowService<Administr
 		assert model != null;
 
 		request.unbind(entity, model, "numberNews", "numberMaterialSheets", "numberToolSheets", 
-				"numberSuggestions", "numberFigments", "minDiscountAdvertisements", 
+				"numberSuggestions", "numberFigments", "minDiscountAdvertisements", "numberAdvertisement", "minDiscount", "maxDiscount",
 				"maxDiscountAdvertisements", "averageSmallDiscountAdvertisements", "averageAverageDiscountAdvertisements",
 				"averageLargeDiscountAdvertisements","stddevSDiscountAdvertisements", "stddevADiscountAdvertisements",
 				"stddevLDiscountAdvertisements", "averageItemsPerSupplier", "averageRequestsPerSupplier", "averageRequestsPerBuyer");
@@ -58,10 +58,24 @@ public class AdministratorDashboardShow implements AbstractShowService<Administr
 		res.setNumberSuggestions(numberSuggestions);
 		Integer numberFigments = this.repository.numberFigments();
 		res.setNumberFigments(numberFigments);
+		Integer numberAdvertisement = this.repository.numberAdvertisement();
+		res.setNumberAdvertisement(numberAdvertisement);
 		Double minDiscountAdvertisements = this.repository.minDiscountAdvertisements();
-		res.setMinDiscountAdvertisements(minDiscountAdvertisements);
+		if(minDiscountAdvertisements<=3 && minDiscountAdvertisements>=2) {
+			res.setMinDiscount("SMALL");
+		}else if(minDiscountAdvertisements>=4 && minDiscountAdvertisements<=5) {
+			res.setMinDiscount("AVERAGE");
+		}else if(minDiscountAdvertisements>=6) {
+			res.setMinDiscount("LARGE");
+		}
 		Double maxDiscountAdvertisements = this.repository.maxDiscountAdvertisements();
-		res.setMaxDiscountAdvertisements(maxDiscountAdvertisements);
+		if(maxDiscountAdvertisements<=3 && maxDiscountAdvertisements>=2) {
+			res.setMaxDiscount("SMALL");
+		}else if(maxDiscountAdvertisements>=4 && maxDiscountAdvertisements<=5) {
+			res.setMaxDiscount("AVERAGE");
+		}else if(maxDiscountAdvertisements>=6) {
+			res.setMaxDiscount("LARGE");
+		}
 		Double averageSmallDiscountAdvertisements = this.repository.averageSmallDiscountAdvertisements() / this.repository.numberAdvertisement();
 		res.setAverageSmallDiscountAdvertisements(averageSmallDiscountAdvertisements);
 		Double averageAverageDiscountAdvertisements = this.repository.averageAverageDiscountAdvertisements() / this.repository.numberAdvertisement();

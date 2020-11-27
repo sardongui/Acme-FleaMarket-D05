@@ -23,6 +23,9 @@ public class AuditorItemController  extends AbstractController<Auditor, Item>{
 	private AuditorItemListMineService	listMineService;
 	
 	@Autowired
+	private AuditorItemListService	listService;
+	
+	@Autowired
 	private AuditorItemListNotMineService	listNotMineService;
 
 	@Autowired
@@ -37,6 +40,6 @@ public class AuditorItemController  extends AbstractController<Auditor, Item>{
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listNotMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-	
+		super.addBasicCommand(BasicCommand.LIST, this.listService);
 	}
 }

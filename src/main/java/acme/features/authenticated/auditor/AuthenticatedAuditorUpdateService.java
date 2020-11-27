@@ -27,12 +27,7 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 	@Override
 	public boolean authorise(final Request<Auditor> request) {
 		assert request != null;
-
-		Principal principal = request.getPrincipal();
-		Auditor auditor = this.repository.findOneAuditorByUserAccountId(principal.getAccountId());
-
-		assert auditor.isAccepted();
-
+		
 		return true;
 	}
 
@@ -43,7 +38,7 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 		assert errors != null;
 
 		request.bind(entity, errors);
-
+	
 	}
 
 	@Override
@@ -53,7 +48,11 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 		assert model != null;
 
 		request.unbind(entity, model, "firm", "responsibilityStatement");
-
+		Auditor auditor = this.repository.findAccepted(entity.getId());
+		if(auditor!= null) {
+			boolean isAccepted=true;
+			model.setAttribute("isAccepted", isAccepted);	
+		}
 	}
 
 	@Override

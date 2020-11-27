@@ -3,6 +3,7 @@ package acme.features.auditor.item;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,30 +13,18 @@ import acme.entities.items.Item;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractShowService;
+
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorItemShowService implements AbstractShowService<Auditor, Item>{
+public class AuditorItemListService implements AbstractListService<Auditor, Item> {
 
 	@Autowired
-	AuditorItemRepository repository;
+	AuditorItemRepository					repository;
 
 	@Override
 	public boolean authorise(Request<Item> request) {
 		assert request != null;
-
-		//Si tengo este codigo de abajo no no se puede realizar el show de los items que no son mios
-//		boolean result;
-//		int itemId;
-//		Item item;
-//		Auditor auditor;
-//		Principal principal;
-//
-//		itemId = request.getModel().getInteger("id");
-//		item = this.repository.findOneById(itemId);
-//		auditor = item.getAuditRecord().getAuditor();
-//		principal = request.getPrincipal();
-//		result = auditor.getUserAccount().getId() == principal.getAccountId();
 
 		return true;
 	}
@@ -46,23 +35,14 @@ public class AuditorItemShowService implements AbstractShowService<Auditor, Item
 		assert entity != null;
 		assert model != null;
 
-		int itemId;
-		
-		itemId = request.getModel().getInteger("id");
-		String uri = request.getServletRequest().getHeader("Referer");
-		if(uri.contains("list-mine") || uri.contains("list")) {
-			model.setAttribute("myAuditRecord", true);
-		}
-		model.setAttribute("item", itemId);
-		
 		//Fecha actual
 		Calendar today = Calendar.getInstance();
 		int todayYear = today.get(Calendar.YEAR);
 		int todayMonth = today.get(Calendar.MONTH);
 		int todayDay = today.get(Calendar.DAY_OF_MONTH);
-						
+								
 		LocalDate now = LocalDate.of(todayYear, todayMonth, todayDay); 
-						
+								
 		//Fecha creacion
 		Calendar creation = new GregorianCalendar();
 		creation.setTime(entity.getCreationMoment());
@@ -77,22 +57,19 @@ public class AuditorItemShowService implements AbstractShowService<Auditor, Item
 			entity.setNewItem(true);
 		}
 		
-		request.unbind(entity, model, "ticker", "creationMoment", "title", "itemCategory", "description", "price", "photo", "link", "newItem");
+		request.unbind(entity, model, "title", "creationMoment", "newItem");
 		
 	}
 
 	@Override
-	public Item findOne(Request<Item> request) {
+	public Collection<Item> findMany(Request<Item> request) {
 		assert request != null;
 
-		Item result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		Collection<Item> result;
+		
+		result = this.repository.findMany();
 
 		return result;
 	}
-
 
 }

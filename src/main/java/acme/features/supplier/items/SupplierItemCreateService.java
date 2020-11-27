@@ -86,7 +86,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 		sections.add(section);
 		ss.setSections(sections);
 		result.setSpecificationSheet(ss);
-		System.out.println(section.getIndexer());
+		
 		
 		//GENERAR TICKER
 		String ticker = "";
@@ -175,7 +175,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 			}
 
 		}
-		System.out.println("validate");
+		
 //		// Ticker incorrecto
 //		if (!errors.hasErrors("ticker")) {
 //			List<String> res = new ArrayList<>();
@@ -208,7 +208,7 @@ public class SupplierItemCreateService implements AbstractCreateService<Supplier
 
 		entity.setTicker(ticker);
 
-		System.out.println("create");
+		
 		Date creationMoment;
 		creationMoment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(creationMoment);

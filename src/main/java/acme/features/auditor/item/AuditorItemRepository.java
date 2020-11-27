@@ -28,5 +28,8 @@ public interface AuditorItemRepository extends AbstractRepository{
 	
 	@Query("select a.auditor from AuditRecord a where a.auditor.id=?1")
 	Auditor findAuditorById(int auditRecordId);
+
+	@Query("select i from Item i where i.finalMode=true")
+	Collection<Item> findMany();
 	
 }
