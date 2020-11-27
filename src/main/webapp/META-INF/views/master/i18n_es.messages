@@ -41,19 +41,19 @@ master.menu.anonymous.list-suggestion = Lista de sugerencias
 master.menu.anonymous.list-figment = Lista de productos
 master.menu.anonymous.list-advertisement = Lista de anuncios
 master.menu.anonymous.list-new = Lista de Novedades
-master.menu.anonymous.list-material-sheet = Hojas de inventario
-master.menu.anonymous.list-tool-sheet = Hojas de herramientas
+master.menu.anonymous.list-material-sheet = Lista de Hojas de inventario
+master.menu.anonymous.list-tool-sheet =Lista de Hojas de herramientas
 
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
 master.menu.authenticated.list-suggestion = Lista de sugerencias
-master.menu.authenticated.list-figment = Lista de productos
+master.menu.authenticated.list-figment = Lista de inventos
 master.menu.authenticated.list-advertisement = Lista de anuncios
 master.menu.authenticated.list-new = Lista de novedades
-master.menu.authenticated.list-material-sheet =Hojas de inventario
-master.menu.authenticated.list-tool-sheet = Hojas de herramientas
-master.menu.authenticated.list-items = Lista de items
+master.menu.authenticated.list-material-sheet =Lista de Hojas de inventario
+master.menu.authenticated.list-tool-sheet = Lista de Hojas de herramientas
+master.menu.authenticated.list-items = Lista de productos
 
 # master.menu.administrator ###################################################
 
@@ -63,18 +63,18 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.customisation = Customización
 master.menu.administrator.shutdown = Parar el sistema
 
-master.menu.administrator.list-new = Novedades
+master.menu.administrator.list-new = Lista de Novedades
 master.menu.administrator.create-new = Crear novedades
-master.menu.administrator.list-material-sheet = Hojas de inventario
+master.menu.administrator.list-material-sheet = Lista de Hojas de inventario
 master.menu.administrator.create-material-sheet = Crear hojas de inventario
-master.menu.administrator.list-tool-sheet = Hojas de herramientas
+master.menu.administrator.list-tool-sheet = Lista de Hojas de herramientas
 master.menu.administrator.create-tool-sheet = Crear hojas de herramientas
-master.menu.administrator.list-suggestion = Sugerencias
+master.menu.administrator.list-suggestion = Lista de Sugerencias
 master.menu.administrator.create-suggestion = Crear Sugerencias
-master.menu.administrator.list-figment = Productos
+master.menu.administrator.list-figment = Lista de Productos
 master.menu.administrator.create-figment = Crear Producto
-master.menu.administrator.list-advertisement = Anuncio
-master.menu.administrator.create-advertisement = Create Anuncio
+master.menu.administrator.list-advertisement = Lista de Anuncio
+master.menu.administrator.create-advertisement = Crear Anuncio
 
 master.menu.administrator.dashboard = Panel
 master.menu.administrator.chart = Gráfico
@@ -95,7 +95,7 @@ master.menu.supplier ########################################################
 
 master.menu.supplier = Distribuidor
 master.menu.supplier.list-item = Lista de Productos
-master.menu.supplier.list-request = List de Peticiones
+master.menu.supplier.list-request = Lista de Peticiones
 master.menu.supplier.create-item = Crear Producto
 
 master.menu.buyer ########################################################
@@ -106,7 +106,7 @@ master.menu.buyer.list-request = Lista de pedidos
 master.menu.sponsor ########################################################
 
 master.menu.sponsor = Patrocinador
-master.menu.sponsor.list-banner = Banners
+master.menu.sponsor.list-banner = Lista de Banners
 master.menu.sponsor.create-banner = Crear banner
 
 # master.menu.consumer ##########################################################
@@ -123,9 +123,9 @@ master.menu.consumer.create-martinez-bulletin = Publicar en boletín de Martinez
 master.menu.consumer.list-suggestion = Lista de sugerencias
 master.menu.consumer.list-figment = Lista de productos
 master.menu.consumer.list-advertisement = Lista de anuncios
-master.menu.consumer.list-new = Novedades
-master.menu.consumer.list-material-sheet = Hojas de inventario
-master.menu.consumer.list-tool-sheet = Hojas de herramientas
+master.menu.consumer.list-new = Lista de Novedades
+master.menu.consumer.list-material-sheet = Lista de Hojas de inventario
+master.menu.consumer.list-tool-sheet =Lista de  Hojas de herramientas
 
 # master.menu.user-account ####################################################
 
